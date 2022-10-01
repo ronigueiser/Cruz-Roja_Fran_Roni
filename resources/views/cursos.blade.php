@@ -42,7 +42,7 @@
 
     <main>
         <section class="container py-4">
-            <h1>Nosotros :)</h1>
+            <h1>Cursos :)</h1>
         </section>
     </main>
 

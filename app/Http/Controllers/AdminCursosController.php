@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminCursosController extends Controller
 {
-    public function cursos()
+    public function admin_cursos()
     {
         return view('admin-cursos');
     }

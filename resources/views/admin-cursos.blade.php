@@ -27,9 +27,6 @@
                         <a class="nav-link active" aria-current="page" href="<?= url('/'); ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= url('nosotros'); ?>">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?= url('admin/cursos'); ?>">Administrar Cursos</a>
                     </li>
                 </ul>

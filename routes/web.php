@@ -45,5 +45,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
 
 Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index']);
 
-Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'cursos']);
+Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos']);
+
+Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'admin_cursos']);
 
