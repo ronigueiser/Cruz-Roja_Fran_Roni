@@ -40,9 +40,42 @@
             </div>
         </nav>
 
-        <main>
-            <section class="container py-4">
-                <h1>Hola :)</h1>
+        <main class="container py-4">
+            <section class="row">
+
+                <div class="col-9">
+                    <h1>Cruz Roja Argentina</h1>
+
+                    <p>Somos una asociación civil, humanitaria y de carácter voluntario, con presencia en el territorio argentino, y parte integrante del
+                        Movimiento Internacional de la Cruz Roja y de la Media Luna Roja, la red humanitaria más grande del mundo presente en 191 países.
+                        Capacitamos en Primeros Auxilios a más de 50.000 personas por año en el país y brindamos cobertura a los asistentes en eventos masivos.</p>
+                </div>
+
+
+                <div class="col-4">
+                    <h2>Acciones Humanitarias</h2>
+
+                    <p>
+                        Desarrollamos acciones humanitarias junto a las comunidades, promoviendo la reducción de riesgos y el desarrollo integral de las personas,
+                        construyendo y fortaleciendo las capacidades locales, fomentando la inclusión y participación de todos los grupos sin ninguna distinción o discriminación.
+                    </p>
+                </div>
+
+                <div class="col-4">
+                    <h2>Siempre Presentes</h2>
+
+                    <p>Desde Cruz Roja estamos presentes en cada gran emergencia, cuando ocurre el desastre y después, cuando los hechos dejan de ser noticia.</p>
+                </div>
+
+                <div class="col-4">
+                    <h2>Programas y Servicios</h2>
+                    <p>A través de nuestros distintos programas y servicios educativos, deseamos construir una sociedad más justa y más incluyente con los sectores en
+                        situación de vulnerabilidad, para que tengan acceso a fuentes de bienestar, seguridad e igualdad de oportunidades.</p>
+                </div>
+
+
+
+
             </section>
         </main>
 
