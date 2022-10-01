@@ -74,6 +74,22 @@
                 </div>
 
 
+                <div class="col-6">
+                    <h2>Cruz Roja siempre está</h2>
+                    <p>
+                        En todo momento, a través de nuestras 66 filiales, acompañamos al crecimiento de las comunidades fortaleciendo la resiliencia y promoviendo
+                        la planificación para estar mejor preparados ante emergencias y desastres.
+                    </p>
+                </div>
+
+                <div class="col-6">
+                    <h2>Trabajando juntos</h2>
+                    <p>
+                        Trabajamos en la promoción de la salud y el desarrollo comunitario, reforzando la prevención de enfermedades prevalentes, y la reducción de
+                        la vulnerabilidad del VIH desde un enfoque de promoción de derechos, de género y de diversidad.
+                    </p>
+                </div>
+
 
 
             </section>

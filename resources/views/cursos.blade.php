@@ -40,9 +40,15 @@
         </div>
     </nav>
 
-    <main>
-        <section class="container py-4">
-            <h1>Cursos :)</h1>
+    <main class="container py-4">
+        <section class="row">
+            <ul>
+                <li>Curso de Formación de Guardavidas</li>
+                <li>Tec. Superior en Enfermería</li>
+                <li>Tec. Superior en Hemoterapia</li>
+                <li>Tec. Superior en Laboratorio y Análisis Clínicos</li>
+                <li>Tec. Superior en Instrumentación Quitúrgica</li>
+            </ul>
         </section>
     </main>
 
