@@ -8,6 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *COntiene las instrucciones con las modificaciones que queremos realizar en la base de datos
      *
      * @return void
      */
@@ -21,6 +22,7 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     * Contiene las instrucciones para deshacer las modificaciones realizadas en el metodo "up()"
      *
      * @return void
      */
