@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,3 +50,12 @@ Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos']);
 
 Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'admin_cursos']);
 
+/*
+AUTENTICACION
+*/
+
+Route::get('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])
+->name('auth.login.form');
+
+Route::post('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginEjecutar'])
+->name('auth.login.ejecutar');
