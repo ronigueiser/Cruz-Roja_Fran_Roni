@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class AdminCursosController extends Controller
 {
-    public function admin_cursos()
+    public function index()
     {
-        return view('admin-cursos');
+        $cursos = Curso::all();
+
+        // dd($cursos);
+
+        return view('admin-cursos', [
+            'cursos' => $cursos,
+        ]);
     }
 }

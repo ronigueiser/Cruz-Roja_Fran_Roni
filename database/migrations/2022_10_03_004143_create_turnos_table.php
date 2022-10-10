@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('turnos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_turno');
+            $table->unsignedInteger('fk_curso');
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             $table->timestamps();
         });
     }

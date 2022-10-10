@@ -48,7 +48,7 @@ Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'
 
 Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos']);
 
-Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'admin_cursos']);
+Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'index']);
 
 /*
 AUTENTICACION
