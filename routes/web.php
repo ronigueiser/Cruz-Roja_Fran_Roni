@@ -41,14 +41,18 @@ use Illuminate\Support\Facades\Route;
  */
 
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
 
 
-Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index']);
+Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'])->name('nosotros');
 
-Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos']);
+Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])->name('ver-cursos');
 
-Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'index']);
+Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'index'])->name('admin.cursos.listado');
+
+Route::get('admin/cursos/nuevo', [\App\Http\Controllers\AdminCursosController::class, 'nuevoForm'])->name('admin.cursos.nuevo.form');
+
+Route::post('admin/cursos/nuevo', [\App\Http\Controllers\AdminCursosController::class, 'nuevoGrabar'])->name('admin.cursos.nuevo.grabar');
 
 /*
 AUTENTICACION

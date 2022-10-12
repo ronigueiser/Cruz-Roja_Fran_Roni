@@ -13,8 +13,18 @@ class AdminCursosController extends Controller
 
         // dd($cursos);
 
-        return view('admin-cursos', [
+        return view('admin.cursos.index', [
             'cursos' => $cursos,
         ]);
+    }
+
+    public function nuevoForm()
+    {
+        return view('admin.cursos.nuevo-form');
+    }
+
+    public function nuevoGrabar()
+    {
+        echo "Hola :D";
     }
 }
