@@ -36,7 +36,12 @@
     </nav>
 
     <main class="container py-4">
-       @yield('main')
+        @if (Session::has('status.message'))
+            <div class="alert alert-{{Session::get('status.type') ?? 'info'}}">{!!Session::get('status.message')!!}</div>
+        @endif
+        <section>
+            @yield('main')
+        </section>
     </main>
 
     <footer class="footer">

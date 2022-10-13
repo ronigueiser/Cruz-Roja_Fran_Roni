@@ -52,6 +52,14 @@ Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 
 
 Route::get('admin/cursos/{id}', [\App\Http\Controllers\AdminCursosController::class, 'ver'])->name('admin.cursos.ver')->whereNumber('id');
 
+Route::get('admin/cursos/{id}/eliminar', [\App\Http\Controllers\AdminCursosController::class, 'eliminarConfirmar'])->name('admin.cursos.eliminar.confirmar')->whereNumber('id');
+
+Route::post('admin/cursos/{id}/eliminar', [\App\Http\Controllers\AdminCursosController::class, 'eliminarEjecutar'])->name('admin.cursos.eliminar.ejecutar')->whereNumber('id');
+
+Route::get('admin/cursos/{id}/editar', [\App\Http\Controllers\AdminCursosController::class, 'editarForm'])->name('admin.cursos.editar.form')->whereNumber('id');
+
+Route::post('admin/cursos/{id}/editar', [\App\Http\Controllers\AdminCursosController::class, 'editarEjecutar'])->name('admin.cursos.editar.ejecutar')->whereNumber('id');
+
 
 
 

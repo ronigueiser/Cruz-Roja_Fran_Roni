@@ -32,7 +32,11 @@
                               <td>{{$curso->nombre}}</td>
                               <td>{{$curso->precio}}</td>
                               <td>{{$curso->descripcion}}</td>
-                              <td><a href="{{route('admin.cursos.ver', ['id' => $curso->curso_id])}}" class="btn btn-primary">Ver</a></td>
+                              <td>
+                                    <a href="{{route('admin.cursos.ver', ['id' => $curso->curso_id])}}" class="btn btn-primary">Ver</a>
+                                    <a href="{{route('admin.cursos.editar.form', ['id' => $curso->curso_id])}}" class="btn btn-success">Editar</a>
+                                    <a href="{{route('admin.cursos.eliminar.confirmar', ['id' => $curso->curso_id])}}" class="btn btn-danger">Eliminar</a>
+                              </td>
                         </tr>
                         @endforeach
                   </tbody>
