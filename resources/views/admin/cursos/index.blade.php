@@ -32,7 +32,7 @@
                               <td>{{$curso->nombre}}</td>
                               <td>{{$curso->precio}}</td>
                               <td>{{$curso->descripcion}}</td>
-                              <td>Proximamente...</td>
+                              <td><a href="{{route('admin.cursos.ver', ['id' => $curso->curso_id])}}" class="btn btn-primary">Ver</a></td>
                         </tr>
                         @endforeach
                   </tbody>

@@ -50,6 +50,11 @@ Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])-
 
 Route::get('admin/cursos', [\App\Http\Controllers\AdminCursosController::class, 'index'])->name('admin.cursos.listado');
 
+Route::get('admin/cursos/{id}', [\App\Http\Controllers\AdminCursosController::class, 'ver'])->name('admin.cursos.ver')->whereNumber('id');
+
+
+
+
 Route::get('admin/cursos/nuevo', [\App\Http\Controllers\AdminCursosController::class, 'nuevoForm'])->name('admin.cursos.nuevo.form');
 
 Route::post('admin/cursos/nuevo', [\App\Http\Controllers\AdminCursosController::class, 'nuevoGrabar'])->name('admin.cursos.nuevo.grabar');

@@ -18,6 +18,15 @@ class AdminCursosController extends Controller
         ]);
     }
 
+    public function ver($id)
+    {
+        $curso = Curso::findOrFail($id);
+
+        return view('admin.cursos.ver', [
+            'curso' => $curso,
+        ]);
+    }
+
     public function nuevoForm()
     {
         return view('admin.cursos.nuevo-form');
