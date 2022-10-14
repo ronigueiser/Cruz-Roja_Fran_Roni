@@ -31,7 +31,7 @@
                         <a class="nav-link" href="{{url('cursos')}}">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('admin/cursos')}}">Administrar Cursos</a>
+                        <a class="nav-link" href="{{route('auth.login.form')}}">Iniciar Sesion</a>
                     </li>
                 </ul>
             </div>
