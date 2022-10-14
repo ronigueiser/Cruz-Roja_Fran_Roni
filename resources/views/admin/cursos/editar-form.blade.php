@@ -37,13 +37,18 @@
                       
                   @enderror
             </div>
+            @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
+            <img src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
+            @else
+            Imagen default!
+        @endif
             <div class="mb-2">
                   <label for="portada" class="form-label">Portada</label>
-                  <input type="file" class="form-control" id="portada" name="portada" value="{{old('portada')}}">
+                  <input type="file" class="form-control" id="portada" name="portada" value="{{old('portada', $curso->portada)}}">
             </div>
             <div class="mb-2">
                   <label for="portada-desc" class="form-label">Descripción de portada</label>
-                  <input type="text" class="form-control" id="portada_descripcion" name="portada_descripcion" value="{{old('portada_descripcion')}}">
+                  <input type="text" class="form-control" id="portada_descripcion" name="portada_descripcion" value="{{old('portada_descripcion', $curso->portada_descripcion)}}">
             </div>
             <div class="mb-2">
                   <button type="submit" class="btn btn-primary">Publicar curso</button>

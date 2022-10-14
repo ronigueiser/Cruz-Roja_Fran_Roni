@@ -36,4 +36,20 @@ class Curso extends Model
     protected $table = 'cursos';
     protected $primaryKey = 'curso_id';
     protected $fillable = ['nombre', 'descripcion', 'precio', 'portada', 'portada_descripcion'];
+
+    public const VALIDATE_RULES = [
+        'nombre' => 'required|min:2',
+        'descripcion' => 'required|min:10',
+        'precio' => 'required|numeric|min:0',
+    ];
+
+    public const VALIDATE_MESSAGES = [
+        'nombre.required' => 'El nombre no puede quedar vacío.',
+        'nombre.min' => 'El nombre debe tener al menos :min caracteres.',
+        'descripcion.required' => 'La descripcion no puede quedar vacía.',
+        'descripcion.min' => 'La descripcion debe tener al menos :min caracteres.',
+        'precio.required' => 'El precio no puede quedar vacío.',
+        'precio.numeric' => 'El precio debe ser un número.',
+        'precio.min' => 'El precio no puede ser negativo.',
+    ];
 }

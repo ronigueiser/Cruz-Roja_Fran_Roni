@@ -63,22 +63,24 @@ class AdminCursosController extends Controller
 
         $data = $request->except(['_token']);
         
-        $request->validate([
-            'nombre' => 'required|min:2',
-            'descripcion' => 'required|min:10',
-            'precio' => 'required|numeric|min:0',
-        ], [
-            'nombre.required' => 'El nombre no puede quedar vacío.',
-            'nombre.min' => 'El nombre debe tener al menos :min caracteres.',
-            'descripcion.required' => 'La descripcion no puede quedar vacía.',
-            'descripcion.min' => 'La descripcion debe tener al menos :min caracteres.',
-            'precio.required' => 'El precio no puede quedar vacío.',
-            'precio.numeric' => 'El precio debe ser un número.',
-            'precio.min' => 'El precio no puede ser negativo.',
-        ]);
+        $request->validate(Curso::VALIDATE_RULES, Curso::VALIDATE_MESSAGES);
+
+        if($request->hasFile('portada')) {
+            $portada = $request->file('portada');
+
+            $nombrePortada = date('YmdHis') . '_' . \Str::slug($data['nombre']) . '.' . $portada->clientExtension();
+
+            $portada->move(public_path('img'), $nombrePortada);
+
+            $data['portada'] = $nombrePortada;
+            $portadaVieja = $curso->portada;
+        }
+
         $curso->update($data);
 
-        //TODO Portada
+        if($portadaVieja ?? false) {
+            unlink(public_path('img/' . $portadaVieja));
+        }
 
         return redirect()
             ->route('admin.cursos.listado')
@@ -96,19 +98,17 @@ class AdminCursosController extends Controller
         $data = $request->except(['_token']);
 
         //TODO Validar y subir la portada
-        $request->validate([
-            'nombre' => 'required|min:2',
-            'descripcion' => 'required|min:10',
-            'precio' => 'required|numeric|min:0',
-        ], [
-            'nombre.required' => 'El nombre no puede quedar vacío.',
-            'nombre.min' => 'El nombre debe tener al menos :min caracteres.',
-            'descripcion.required' => 'La descripcion no puede quedar vacía.',
-            'descripcion.min' => 'La descripcion debe tener al menos :min caracteres.',
-            'precio.required' => 'El precio no puede quedar vacío.',
-            'precio.numeric' => 'El precio debe ser un número.',
-            'precio.min' => 'El precio no puede ser negativo.',
-        ]);
+        $request->validate(Curso::VALIDATE_RULES, Curso::VALIDATE_MESSAGES);
+
+        if($request->hasFile('portada')) {
+            $portada = $request->file('portada');
+
+            $nombrePortada = date('YmdHis') . '_' . \Str::slug($data['nombre']) . '.' . $portada->clientExtension();
+
+            $portada->move(public_path('img'), $nombrePortada);
+
+            $data['portada'] = $nombrePortada;
+        }
 
         $curso = Curso::create($data);
 
