@@ -30,15 +30,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('cursos')}}">Cursos</a>
                     </li>
+
+{{--                    @if(Auth::check())--}}
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.cursos.listado')}}">Panel</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="{{route('auth.logout')}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn nav-link">Cerrar Sesion</button>
+                            </form>
+                        </li>
+{{--                        @else--}}
+                    @elseguest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('auth.login.form')}}">Iniciar Sesion</a>
+                        <a class="nav-link" href="{{ route('auth.login.form') }}">Iniciar Sesion</a>
                     </li>
+{{--                        @endif--}}
+                        @endauth
                 </ul>
             </div>
         </div>
     </nav>
 
     <main class="container py-4">
+
+        @if (Session::has('status.message'))
+            <div class="alert alert-{{Session::get('status.type') ?? 'info'}}">{!!Session::get('status.message')!!}</div>
+        @endif
        @yield('main')
     </main>
 

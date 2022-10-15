@@ -30,6 +30,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{url('admin/cursos')}}">Panel de Administrador</a>
                     </li>
+                    <li class="nav-item">
+                        <form action="{{route('auth.logout')}}" method="post">
+                            @csrf
+                            <button type="submit" class="btn nav-link">Cerrar Sesion</button>
+                        </form>
+                    </li>
+
                 </ul>
             </div>
         </div>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -11,7 +12,7 @@ class AuthController extends Controller
         return view('auth/login');
     }
 
-    public function loginEjecutar(Request $request){
+    public function loginEjecutar (Request $request){
 
         //definimos las credenciales para la auth
         $credenciales = [
@@ -33,6 +34,19 @@ class AuthController extends Controller
             ->with('status.message', 'Los datos ingresados son incorrectos')
             ->with('status.type', 'danger')
             ->withInput();
+    }
+
+    public function logout (Request $request){
+
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()
+            ->route('auth.login.form')
+            ->with('status.message', 'Sesion cerrada exitosamente')
+            ->with('status.type', 'success');
     }
 
 
