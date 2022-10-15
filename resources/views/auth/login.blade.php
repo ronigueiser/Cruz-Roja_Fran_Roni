@@ -15,6 +15,8 @@
                 name="email"
                 id="email"
                 class="form-control"
+                required
+
             >
         </div>
         <div class="mb-3">
@@ -24,6 +26,7 @@
                 name="password"
                 id="password"
                 class="form-control"
+                required
             >
         </div>
 

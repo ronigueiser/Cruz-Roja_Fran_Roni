@@ -20,13 +20,13 @@
                               <th>Nombre</th>
                               <th>Precio</th>
                               <th>Descripcion</th>
-                              
+
                               <th>Acciones</th>
                         </tr>
                   </thead>
                   <tbody>
                         @foreach ($cursos as $curso)
-                            
+
                         <tr>
                               <td>{{$curso->curso_id}}</td>
                               <td>{{$curso->nombre}}</td>
