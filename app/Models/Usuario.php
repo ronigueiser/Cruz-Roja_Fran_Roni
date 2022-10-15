@@ -13,7 +13,7 @@ class Usuario extends User
     use HasApiTokens, Notifiable;
 
     protected $table = 'usuarios';
-    protected $primaryKey = 'usuarios';
+    protected $primaryKey = 'usuario_id';
 
     protected $fillable = ['email', 'password'];
 
