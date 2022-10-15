@@ -7,6 +7,9 @@ html, body, #app {
     grid-template-rows: 56px 1fr 75px;
 }
 
+.navbar-base {
+    color: #d91e1c;
+}
 
 .footer{
     display: flex;
