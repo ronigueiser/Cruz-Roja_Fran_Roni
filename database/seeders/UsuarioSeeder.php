@@ -23,6 +23,13 @@ class UsuarioSeeder extends Seeder
                'created_at' => now(),
                'updated_at' => now()
            ],
+           [
+            'usuario_id' => 2,
+            'email' => 'fran@davinci.edu.ar',
+            'password' => \Hash::make('1234'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
         ]);
     }
 }
