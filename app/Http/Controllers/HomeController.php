@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Curso;
+
 class HomeController extends Controller
 {
     public function home ()
@@ -11,6 +13,14 @@ class HomeController extends Controller
          * La funcion "view()" busca un archivo ".php" o ".blade.php" en la carpeta [resources/views]
          */
 
-        return view('welcome');
+
+        $cursos = Curso::all();
+
+        // dd($cursos);
+
+        return view('welcome', [
+            'cursos' => $cursos,
+        ]);
+
     }
 }

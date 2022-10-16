@@ -74,5 +74,13 @@
 
                         Tenemos distintos cursos en los que te podés inscribir y así ser parte de un movimiento que prioriza la salud y bienestar de los demás
                     </p>
+
+
+                    <ul>
+                        @foreach ($cursos as $curso)
+                            <li class="cont-curso">{{$curso->nombre}}</li>
+                        @endforeach
+
+                    </ul>
             </section>
 @endsection
