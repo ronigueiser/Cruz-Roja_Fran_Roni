@@ -5,12 +5,20 @@
 
 @section('main')
         <section class="row">
+            <div class="col-6">
+                <h1>{{$curso->nombre}}</h1>
+
+                <p><b>Precio:</b> ${{$curso->precio}}</p>
+
+                <h2>Descripcion del producto</h2>
+                <p>{{$curso->descripcion}}</p>
+            </div>
+
             @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
                 <img src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
-                @else
-                Imagen default!
+            @else
+                <p>*No existe una imagen para este curso</p>
             @endif
-            <h1>{{$curso->nombre}}</h1>
         </section>
 
 @endsection
