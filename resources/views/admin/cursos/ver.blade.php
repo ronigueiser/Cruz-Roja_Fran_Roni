@@ -19,6 +19,8 @@
             @else
                 <p>*No existe una imagen para este curso</p>
             @endif
+
+            <a class="" aria-current="page" href="{{url('admin/cursos')}}">Volver </a>
         </section>
 
 @endsection
