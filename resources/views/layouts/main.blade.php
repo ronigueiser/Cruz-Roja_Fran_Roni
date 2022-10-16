@@ -30,6 +30,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('cursos')}}">Cursos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('blog')}}">Blog</a>
+                    </li>
 
 {{--                    @if(Auth::check())--}}
                     @auth
