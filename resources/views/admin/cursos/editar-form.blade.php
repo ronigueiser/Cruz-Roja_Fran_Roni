@@ -38,7 +38,7 @@
                   @enderror
             </div>
             @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
-            <img src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
+            <img class="img-edit" src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
             @else
             Imagen default!
         @endif
@@ -51,7 +51,7 @@
                   <input type="text" class="form-control" id="portada_descripcion" name="portada_descripcion" value="{{old('portada_descripcion', $curso->portada_descripcion)}}">
             </div>
             <div class="mb-2">
-                  <button type="submit" class="btn btn-primary">Publicar curso</button>
+                  <button type="submit" class="btn btn-primary">Modificar curso</button>
             </div>
       </form>
 </section>

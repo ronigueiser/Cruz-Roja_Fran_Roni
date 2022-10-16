@@ -9,7 +9,7 @@
 
 @section('main')
       <section class="container py-4">
-            <h1>Admin :)</h1>
+            <h1>Panel de Administración</h1>
             <p>
                   <a href="{{route('admin.cursos.nuevo.form')}}">Publicar nuevo curso</a>
             </p>

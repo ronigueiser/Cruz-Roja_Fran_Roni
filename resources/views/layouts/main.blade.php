@@ -17,7 +17,7 @@
 <div id="app">
 
     <nav class="navbar navbar-expand-lg navbar-base">
-        <div class="container-fluid">
+        <div class="container-fluid navbar-ddown">
             <a class="navbar-brand" href="{{url('/')}}">Cruz Roja</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
         </div>
     </nav>
 
-    <main class="container py-4">
+    <main class="container-fluid">
 
         @if (Session::has('status.message'))
             <div class="alert alert-{{Session::get('status.type') ?? 'info'}}">{!!Session::get('status.message')!!}</div>

@@ -1,5 +1,10 @@
-html, body, #app {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+
+html,
+body,
+#app {
     height: 100%;
+    font-family: "Roboto";
 }
 
 #app {
@@ -7,11 +12,91 @@ html, body, #app {
     grid-template-rows: 56px 1fr 75px;
 }
 
+.negrita {
+    font-weight: 700;
+}
+
+.contain {
+    object-fit: contain !important;
+}
+
 .navbar-base {
+    color: white;
+}
+.navbar-ddown {
+    background: white;
+}
+.navbar-brand {
+    color: #d91e1c;
+    font-weight: 700;
+}
+.nav-link {
+    border: none;
+}
+.nav-link:hover {
     color: #d91e1c;
 }
 
-.footer{
+main {
+    background-color: beige;
+}
+
+.cr-title {
+    background: url(../img/cruz-roja.png) no-repeat center center;
+    background-size: contain;
+    padding-top: 5rem;
+    margin-top: 5rem;
+}
+
+.cont-1 {
+    gap: 2%;
+    height: 300px;
+    
+}
+
+.cont-1>div {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.cont-1>div:last-child {
+    background: #d91e1c;
+    color: white;
+}
+
+.catalogo-cursos {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+    padding: 0;
+}
+
+.catalogo-cursos li {
+    /* max-width: 300px; */
+    padding: 1rem;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+
+.catalogo-cursos li h2 {
+    color: #d91e1c;
+}
+.catalogo-cursos li img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+}
+
+.img-edit {
+    max-width: 300px;
+}
+
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +104,18 @@ html, body, #app {
     background-color: #333;
     color: #fff;
 }
-.footer p{
+.footer p {
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .catalogo-cursos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .catalogo-cursos {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

@@ -17,7 +17,7 @@
 <div id="app">
 
     <nav class="navbar navbar-expand-lg navbar-base">
-        <div class="container-fluid">
+        <div class="container-fluid navbar-ddown">
             <a class="navbar-brand" href="{{url('/')}}">Administrador ~ Cruz Roja</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('/')}}">Volver a la Home</a>
+                        <a class="nav-link" aria-current="page" href="{{url('/')}}">Volver a la Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{url('admin/cursos')}}">Panel de Administrador</a>
+                        <a class="nav-link" aria-current="page" href="{{url('admin/cursos')}}">Panel de Administrador</a>
                     </li>
                     <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">
@@ -42,7 +42,7 @@
         </div>
     </nav>
 
-    <main class="container py-4">
+    <main class="container-fluid">
         @if (Session::has('status.message'))
             <div class="alert alert-{{Session::get('status.type') ?? 'info'}}">{!!Session::get('status.message')!!}</div>
         @endif
