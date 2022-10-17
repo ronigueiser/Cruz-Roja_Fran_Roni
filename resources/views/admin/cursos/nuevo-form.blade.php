@@ -39,7 +39,7 @@
             </div>
             <div class="mb-2">
                   <label for="portada" class="form-label">Portada</label>
-                  <input type="file" class="form-control" id="portada" name="portada" value="{{old('portada')}}">
+                  <input type="file" class="form-control" id="portada" name="portada" >
             </div>
             <div class="mb-2">
                   <label for="portada-desc" class="form-label">Descripción de portada</label>
