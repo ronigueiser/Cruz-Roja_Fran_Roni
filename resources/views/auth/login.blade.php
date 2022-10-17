@@ -1,3 +1,10 @@
+<?php
+/**
+ *@var \Illuminate\Support\ViewErrorBag $errors
+ */
+?>
+
+
 @extends('layouts.main')
 
 @section('title', 'Iniciar Sesion')
@@ -16,9 +23,12 @@
                 name="email"
                 id="email"
                 class="form-control"
-                required
+
 
             >
+            @error('email')
+            <div class="text-danger">{{ $errors->first('email') }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="password" class="form-label"> Password</label>
@@ -27,9 +37,12 @@
                 name="password"
                 id="password"
                 class="form-control"
-                required
+
             >
         </div>
+        @error('password')
+        <div class="text-danger">{{ $errors->first('password') }}</div>
+        @enderror
 
         <button type="submit" class="btn">Ingresar</button>
     </form>
