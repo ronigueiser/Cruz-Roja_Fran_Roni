@@ -12,7 +12,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 
 Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'])->name('nosotros');
 
-Route::get('blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog');
+Route::get('blog', [\App\Http\Controllers\BlogController::class, 'comentarios'])->name('blog');
 
 Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])->name('ver-cursos');
 
