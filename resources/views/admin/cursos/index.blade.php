@@ -33,9 +33,9 @@
                               <td>{{$curso->precio}}</td>
                               <td>{{$curso->descripcion}}</td>
                               <td>
-                                    <a href="{{route('admin.cursos.ver', ['id' => $curso->curso_id])}}" class="btn btn-primary">Ver</a>
-                                    <a href="{{route('admin.cursos.editar.form', ['id' => $curso->curso_id])}}" class="btn btn-success">Editar</a>
-                                    <a href="{{route('admin.cursos.eliminar.confirmar', ['id' => $curso->curso_id])}}" class="btn btn-danger">Eliminar</a>
+                                    <a href="{{route('admin.cursos.ver', ['id' => $curso->curso_id])}}" class="btn  btn-actions btn-primary"><i class="fa-solid fa-eye pe-2"></i>Ver</a>
+                                    <a href="{{route('admin.cursos.editar.form', ['id' => $curso->curso_id])}}" class="btn  btn-actions btn-success"> <i class="fa-solid fa-pen-to-square pe-2"></i>Editar</a>
+                                    <a href="{{route('admin.cursos.eliminar.confirmar', ['id' => $curso->curso_id])}}" class="btn  btn-actions btn-danger"><i class="fa-solid fa-trash pe-2"></i>Eliminar</a>
                               </td>
                         </tr>
                         @endforeach

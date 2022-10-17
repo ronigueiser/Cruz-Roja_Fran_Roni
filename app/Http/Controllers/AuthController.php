@@ -36,6 +36,34 @@ class AuthController extends Controller
             ->withInput();
     }
 
+    public function registerForm(){
+        return view('auth/register');
+    }
+
+    public function registerEjecutar (Request $request){
+
+        //definimos las credenciales para la auth
+        $credenciales = [
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ];
+
+        if(Auth::attempt($credenciales)){
+            $request->session()->regenerate();
+
+            return redirect()
+                ->route('admin.cursos.listado')
+                ->with('status.message', 'Sesion iniciada correctamente')
+                ->with('status.type', 'success');
+        }
+
+        return redirect()
+            ->route('auth.register.form')
+            ->with('status.message', 'Los datos ingresados son incorrectos')
+            ->with('status.type', 'danger')
+            ->withInput();
+    }
+
     public function logout (Request $request){
 
         Auth::logout();

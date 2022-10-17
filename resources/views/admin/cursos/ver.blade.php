@@ -4,21 +4,19 @@
 @section('title', 'Ver curso')
 
 @section('main')
-        <section class="row">
-            <div class="col-6">
-                <h1>{{$curso->nombre}}</h1>
+        <section class="container d-flex flex-column my-4 mb-4">
+            @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
+                <img class="curso-det-img" src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
+            @endif
+            <div class="cont-det-curso">
+                <h1 class="negrita">{{$curso->nombre}}</h1>
 
-                <p><b>Precio:</b> ${{$curso->precio}}</p>
+                <p><span class="negrita">Precio:</span> ${{$curso->precio / 100}}</p>
 
-                <h2>Descripcion del producto</h2>
+                <h2>Descripcion del curso</h2>
                 <p>{{$curso->descripcion}}</p>
             </div>
 
-            @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
-                <img src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
-            @else
-                <p>*No existe una imagen para este curso</p>
-            @endif
 
             <a class="" aria-current="page" href="{{url('admin/cursos')}}">Volver </a>
         </section>

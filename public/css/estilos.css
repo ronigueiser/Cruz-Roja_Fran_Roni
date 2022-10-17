@@ -22,6 +22,7 @@ body,
 
 .navbar-base {
     color: white;
+    z-index: 10;
 }
 .navbar-ddown {
     background: white;
@@ -85,6 +86,8 @@ main {
 
 .catalogo-cursos li h2 {
     color: #d91e1c;
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
 
 .catalogo-cursos li img {
@@ -135,6 +138,55 @@ main {
 
 .img-edit {
     max-width: 300px;
+}
+
+.cont-det-curso h1 {
+    color: #d91e1c;
+    margin-top: 2rem;
+}
+
+.curso-det-img {
+    max-width: 50%;
+    margin: auto;
+}
+
+.cont-blog h1 {
+    color: #d91e1c;
+    margin-bottom: 2rem;
+}
+
+.item-blog {
+    padding: 1rem;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    margin-bottom: 2rem;
+}
+
+.btn-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cont-auth {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-content: center;
+    margin-top: 4rem;
+}
+
+.cont-auth .btn {
+    background-color: #d91e1c;
+    color: white;
+}
+
+.cont-auth .btn:hover {
+    background-color: #991614;
+    color: white;
+    border: 1px solid #991614;
 }
 
 .footer {

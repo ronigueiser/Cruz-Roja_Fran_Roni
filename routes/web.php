@@ -25,6 +25,14 @@ Route::post('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'log
     ->name('auth.login.ejecutar')
     ->middleware(['guest']);
 
+Route::get('registrarse', [\App\Http\Controllers\AuthController::class, 'registerForm'])
+    ->name('auth.register.form')
+    ->middleware(['guest']);
+
+Route::post('registrarse', [\App\Http\Controllers\AuthController::class, 'registerEjecutar'])
+    ->name('auth.register.ejecutar')
+    ->middleware(['guest']);
+
 Route::post('cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logout'])
     ->name('auth.logout')
     ->middleware(['auth']);

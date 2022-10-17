@@ -11,7 +11,7 @@
             @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
             <img src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
             @else
-            <img class="contain" src="{{url('img/img-default.webp')}}" alt="No hay foto para mostrar.">
+            <img class="contain" src="{{url('img/cruz-roja.png')}}" alt="No hay foto para mostrar.">
             @endif
             <h2 class="negrita">{{$curso->nombre}}</h2>
             <p>{{$curso->descripcion}}</p>
