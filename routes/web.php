@@ -63,6 +63,20 @@ Route::prefix('admin/blog')
     ->middleware(['auth'])
     ->controller(\App\Http\Controllers\AdminBlogController::class)->group(function(){
     Route::get('/', 'index')->name('admin.comentarios.listado');
+
+    Route::get('/{id}', 'ver')->name('admin.comentarios.ver')->whereNumber('id');
+
+    Route::get('/{id}/eliminar', 'eliminarConfirmar')->name('admin.comentarios.eliminar.confirmar')->whereNumber('id');
+
+    Route::post('/{id}/eliminar', 'eliminarEjecutar')->name('admin.comentarios.eliminar.ejecutar')->whereNumber('id');
+
+    Route::get('/{id}/editar', 'editarForm')->name('admin.comentarios.editar.form')->whereNumber('id');
+
+    Route::post('/{id}/editar', 'editarEjecutar')->name('admin.comentarios.editar.ejecutar')->whereNumber('id');
+
+    Route::get('/nuevo', 'nuevoForm')->name('admin.comentarios.nuevo.form');
+
+    Route::post('/nuevo', 'nuevoGrabar')->name('admin.comentarios.nuevo.grabar');
 });
 
 /*
