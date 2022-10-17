@@ -13,7 +13,7 @@
 
             <h2>Comentarios</h2>
             <p>
-                  <a href="{{route('admin.blog.nuevo.form')}}">Publicar nuevo comentario</a>
+                  <a href="{{route('admin.comentarios.nuevo.form')}}">Publicar nuevo comentario</a>
             </p>
             <table class="table table-bordered table-striped">
                   <thead>
