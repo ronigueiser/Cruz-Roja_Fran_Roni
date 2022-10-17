@@ -9,7 +9,9 @@
 
 @section('main')
       <section class="container py-4">
-            <h1>Panel de Administración</h1>
+            <h1>Panel de Administración - Blog</h1>
+
+            <a href="{{route('admin.cursos.listado')}}" class="btn btn-primary my-2 mb-2">Panel de Cursos</a>
 
             <h2>Comentarios</h2>
             <p>
@@ -35,9 +37,9 @@
                               <td>{{$comentario->curso}}</td>
                               <td>{{$comentario->comentario}}</td>
                               <td>
-                                    <a href="{{route('admin.cursos.ver', ['id' => $comentario->comentario_id])}}" class="btn  btn-actions btn-primary"><i class="fa-solid fa-eye pe-2"></i>Ver</a>
-                                    <a href="{{route('admin.cursos.editar.form', ['id' => $comentario->comentario_id])}}" class="btn  btn-actions btn-success"> <i class="fa-solid fa-pen-to-square pe-2"></i>Editar</a>
-                                    <a href="{{route('admin.cursos.eliminar.confirmar', ['id' => $comentario->comentario_id])}}" class="btn  btn-actions btn-danger"><i class="fa-solid fa-trash pe-2"></i>Eliminar</a>
+                                    <a href="{{route('admin.comentarios.ver', ['id' => $comentario->comentario_id])}}" class="btn  btn-actions btn-primary"><i class="fa-solid fa-eye pe-2"></i>Ver</a>
+                                    <a href="{{route('admin.comentarios.editar.form', ['id' => $comentario->comentario_id])}}" class="btn  btn-actions btn-success"> <i class="fa-solid fa-pen-to-square pe-2"></i>Editar</a>
+                                    <a href="{{route('admin.comentarios.eliminar.confirmar', ['id' => $comentario->comentario_id])}}" class="btn  btn-actions btn-danger"><i class="fa-solid fa-trash pe-2"></i>Eliminar</a>
                               </td>
                         </tr>
                         @endforeach

@@ -43,7 +43,7 @@ class AdminBlogController extends Controller
         $comentario->delete();
 
         return redirect()
-            ->route('admin.blog.listado')
+            ->route('admin.comentarios.listado')
             ->with('status.message', 'El comentario se eliminó con éxito')
             ->with('status.type', 'success');
     }
@@ -68,7 +68,7 @@ class AdminBlogController extends Controller
         $comentario->update($data);
 
         return redirect()
-            ->route('admin.blog.listado')
+            ->route('admin.comentarios.listado')
             ->with('status.message', 'El comentario se modificó con éxito')
             ->with('status.type', 'success');
     }
@@ -87,7 +87,7 @@ class AdminBlogController extends Controller
 
         $comentario = Blog::create($data);
 
-        return redirect()->route('admin.blog.listado')
+        return redirect()->route('admin.comentarios.listado')
             ->with('status.message', 'El comentario se creó con éxito')
             ->with('status.type', 'success');
         ;

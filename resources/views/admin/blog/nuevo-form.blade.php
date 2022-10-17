@@ -14,18 +14,10 @@
         <form action="{{route("admin.comentarios.nuevo.grabar")}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="{{old('nombre')}}">
-                @error('nombre')
-                <div class="text-danger">{{ $errors->first('nombre') }}</div>
-
-                @enderror
-            </div>
-            <div class="mb-2">
-                <label for="comentario" class="form-label">Comentario</label>
-                <input type="text" class="form-control" id="comentario" name="comentario" value="{{old('comentario')}}">
-                @error('Comentario')
-                <div class="text-danger">{{ $errors->first('comentario') }}</div>
+                <label for="nombre" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" value="{{old('usuario')}}">
+                @error('usuario')
+                <div class="text-danger">{{ $errors->first('usuario') }}</div>
 
                 @enderror
             </div>
@@ -34,6 +26,14 @@
                 <input type="text" class="form-control" id="curso" name="curso" value="{{old('curso')}}">
                 @error('curso')
                 <div class="text-danger">{{ $errors->first('curso') }}</div>
+
+                @enderror
+            </div>
+            <div class="mb-2">
+                <label for="comentario" class="form-label">Comentario</label>
+                <input type="text" class="form-control" id="comentario" name="comentario" value="{{old('comentario')}}">
+                @error('comentario')
+                <div class="text-danger">{{ $errors->first('comentario') }}</div>
                 @enderror
             </div>
             <div class="mb-2">

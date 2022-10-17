@@ -11,32 +11,35 @@
 @section('main')
     <section class="container py-4">
         <h1>Editar un comentario</h1>
-        <form action="{{route("admin.comentario.editar.ejecutar", ['id' =>$comentario -> comentario_id])}}" method="post" enctype="multipart/form-data">
+        <form action="{{route("admin.comentarios.editar.ejecutar", ['id' =>$comentario -> comentario_id])}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="{{old('nombre', $comentario->nombre)}}">
-                @error('nombre')
-                <div class="text-danger">{{ $errors->first('nombre') }}</div>
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" value="{{old('usuario', $comentario->usuario)}}">
+                @error('usuario')
+                <div class="text-danger">{{ $errors->first('usuario') }}</div>
+
+                @enderror
+            </div>
+            <div class="mb-2">
+                <label for="curso" class="form-label">Curso</label>
+                <input type="text" class="form-control" id="curso" name="curso" value="{{old('curso', $comentario->curso)}}">
+                @error('curso')
+                <div class="text-danger">{{ $errors->first('comentario') }}</div>
 
                 @enderror
             </div>
             <div class="mb-2">
                 <label for="comentario" class="form-label">Comentario</label>
-                <input type="text" class="form-control" id="comentario" name="comentario" value="{{old('comentario', $comentario->comentario)}}">
+                <input type="text" class="form-control" id="comentario" name="comentario" value="{{old('precio', $comentario->comentario)}}">
                 @error('comentario')
                 <div class="text-danger">{{ $errors->first('comentario') }}</div>
 
                 @enderror
             </div>
             <div class="mb-2">
-                <label for="curso" class="form-label">Curso</label>
-                <input type="text" class="form-control" id="curso" name="curso" value="{{old('precio', $comentario->curso)}}">
-                @error('curso')
-                <div class="text-danger">{{ $errors->first('curso') }}</div>
-
-                @enderror
-            </div>
+                <button type="submit" class="btn btn-primary">Modificar comentario</button>
+          </div>
         </form>
     </section>
 @endsection
