@@ -59,6 +59,11 @@ Route::prefix('admin/cursos')
 
 });
 
+Route::prefix('admin/blog')
+    ->middleware(['auth'])
+    ->controller(\App\Http\Controllers\AdminBlogController::class)->group(function(){
+    Route::get('/', 'index')->name('admin.comentarios.listado');
+});
 
 /*
 AUTENTICACION

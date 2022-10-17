@@ -10,6 +10,10 @@
 @section('main')
       <section class="container py-4">
             <h1>Panel de Administración</h1>
+
+            <a href="{{route('admin.comentarios.listado')}}" class="btn btn-primary">Panel del Blog</a>
+
+            <h2>Cursos</h2>
             <p>
                   <a href="{{route('admin.cursos.nuevo.form')}}">Publicar nuevo curso</a>
             </p>
