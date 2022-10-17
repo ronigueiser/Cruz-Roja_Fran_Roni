@@ -19,7 +19,7 @@ Debemos aclarar en que espacio "cedido" por el template queremos ubicar el conte
     <ul class="cont-blog">
         @foreach ($comentarios as $comentario)
         <li class="item-blog">
-            <h2 class="negrita" class="negrita">{{$comentario->usuario}}</h2>
+            <h2 class="negrita" >{{$comentario->usuario}}</h2>
             <p>Curso realizado: {{$comentario->curso}}</p>
 
             <blockquote>"{{$comentario->comentario}}"</blockquote>

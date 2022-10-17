@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Usuario;
 
 class AuthController extends Controller
 {
@@ -19,6 +20,8 @@ class AuthController extends Controller
             'email' => $request->input('email'),
             'password' => $request->input('password'),
         ];
+
+        $request->validate(Usuario::VALIDATE_RULES, Usuario::VALIDATE_MESSAGES);
 
         if(Auth::attempt($credenciales)){
             $request->session()->regenerate();

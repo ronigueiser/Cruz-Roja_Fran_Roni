@@ -15,7 +15,7 @@
             @csrf
             <div class="mb-2">
                 <label for="nombre" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" value="{{old('usuario')}}">
+                <input type="text" class="form-control" id="nombre" name="usuario" value="{{old('usuario')}}">
                 @error('usuario')
                 <div class="text-danger">{{ $errors->first('usuario') }}</div>
 

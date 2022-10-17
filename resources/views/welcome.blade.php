@@ -102,4 +102,5 @@ Debemos aclarar en que espacio "cedido" por el template queremos ubicar el conte
 
         <a href="{{url('cursos')}}" class="btn btn-ver-cursos">Ver cursos</a>
     </section>
+</section>
     @endsection

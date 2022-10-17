@@ -18,7 +18,7 @@
                   <input type="text" class="form-control" id="nombre" name="nombre" value="{{old('nombre')}}">
                   @error('nombre')
                   <div class="text-danger">{{ $errors->first('nombre') }}</div>
-                      
+
                   @enderror
             </div>
             <div class="mb-2">
@@ -26,7 +26,7 @@
                   <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{old('descripcion')}}">
                   @error('descripcion')
                   <div class="text-danger">{{ $errors->first('descripcion') }}</div>
-                      
+
                   @enderror
             </div>
             <div class="mb-2">
@@ -34,7 +34,7 @@
                   <input type="number" class="form-control" id="precio" name="precio" value="{{old('precio')}}">
                   @error('precio')
                   <div class="text-danger">{{ $errors->first('precio') }}</div>
-                      
+
                   @enderror
             </div>
             <div class="mb-2">
@@ -43,7 +43,7 @@
             </div>
             <div class="mb-2">
                   <label for="portada-desc" class="form-label">Descripción de portada</label>
-                  <input type="text" class="form-control" id="portada_descripcion" name="portada_descripcion" value="{{old('portada_descripcion')}}">
+                  <input type="text" class="form-control" id="portada-desc" name="portada_descripcion" value="{{old('portada_descripcion')}}">
             </div>
             <div class="mb-2">
                   <button type="submit" class="btn btn-primary">Publicar curso</button>
