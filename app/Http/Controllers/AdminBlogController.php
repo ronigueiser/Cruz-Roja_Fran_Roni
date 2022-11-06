@@ -82,7 +82,6 @@ class AdminBlogController extends Controller
     {
         $data = $request->except(['_token']);
 
-        //TODO Validar y subir la portada
         $request->validate(Blog::VALIDATE_RULES, Blog::VALIDATE_MESSAGES);
 
         $comentario = Blog::create($data);

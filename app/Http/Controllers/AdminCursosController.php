@@ -97,7 +97,6 @@ class AdminCursosController extends Controller
     {
         $data = $request->except(['_token']);
 
-        //TODO Validar y subir la portada
         $request->validate(Curso::VALIDATE_RULES, Curso::VALIDATE_MESSAGES);
 
         if($request->hasFile('portada')) {

@@ -17,13 +17,6 @@ Route::get('blog', [\App\Http\Controllers\BlogController::class, 'comentarios'])
 Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])->name('ver-cursos');
 
 
-Route::get('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])
-    ->name('auth.login.form')
-    ->middleware(['guest']);
-
-Route::post('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginEjecutar'])
-    ->name('auth.login.ejecutar')
-    ->middleware(['guest']);
 
 Route::get('registrarse', [\App\Http\Controllers\AuthController::class, 'registerForm'])
     ->name('auth.register.form')
@@ -83,8 +76,27 @@ Route::prefix('admin/blog')
 AUTENTICACION
 */
 
+
 Route::get('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])
-->name('auth.login.form');
+    ->name('auth.login.form')
+    ->middleware(['guest']);
 
 Route::post('iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginEjecutar'])
-->name('auth.login.ejecutar');
+    ->name('auth.login.ejecutar')
+    ->middleware(['guest']);
+
+Route::get('recuperar-password-email', [\App\Http\Controllers\RecuperarPasswordController::class, 'emailRecuperarForm'])
+->name('password.request')
+->middleware(['guest']);
+
+Route::post('recuperar-password-email', [\App\Http\Controllers\RecuperarPasswordController::class, 'emailRecuperarEnviar'])
+->name('password.email')
+->middleware(['guest']);
+
+Route::get('restablecer-password/{token}', [\App\Http\Controllers\RecuperarPasswordController::class, 'restablecerPasswordForm'])
+->name('password.reset')
+->middleware(['guest']);
+
+Route::post('restablecer-password', [\App\Http\Controllers\RecuperarPasswordController::class, 'restablecerPasswordEjecutar'])
+->name('password.update')
+->middleware(['guest']);
