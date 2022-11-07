@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Curso wherePrecio($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Curso whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $clasificacion_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Curso whereClasificacionId($value)
  */
 class Curso extends Model
 {
@@ -52,4 +54,13 @@ class Curso extends Model
         'precio.numeric' => 'El precio debe ser un número.',
         'precio.min' => 'El precio no puede ser negativo.',
     ];
+
+    public function clasificacion() 
+    {
+        return $this->belongsTo(
+            Clasificacion::class,
+            'clasificacion_id',
+            'clasificacion_id',
+        );
+    }
 }

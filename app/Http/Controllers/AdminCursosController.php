@@ -9,9 +9,7 @@ class AdminCursosController extends Controller
 {
     public function index()
     {
-        $cursos = Curso::all();
-
-        // dd($cursos);
+        $cursos = Curso::with(['clasificacion'])->get();
 
         return view('admin.cursos.index', [
             'cursos' => $cursos,

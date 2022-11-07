@@ -23,8 +23,8 @@
                               <th>ID</th>
                               <th>Nombre</th>
                               <th>Precio</th>
+                              <th>Clasificacion</th>
                               <th>Descripcion</th>
-
                               <th>Acciones</th>
                         </tr>
                   </thead>
@@ -35,6 +35,7 @@
                               <td>{{$curso->curso_id}}</td>
                               <td>{{$curso->nombre}}</td>
                               <td>{{$curso->precio}}</td>
+                              <td>{{$curso->clasificacion->abreviatura}}</td>
                               <td>{{$curso->descripcion}}</td>
                               <td>
                                     <a href="{{route('admin.cursos.ver', ['id' => $curso->curso_id])}}" class="btn  btn-actions btn-primary"><i class="fa-solid fa-eye pe-2"></i>Ver</a>
