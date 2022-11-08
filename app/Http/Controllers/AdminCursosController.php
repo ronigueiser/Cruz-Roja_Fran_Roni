@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Curso;
+use App\Models\Clasificacion;
 
 class AdminCursosController extends Controller
 {
@@ -52,6 +53,7 @@ class AdminCursosController extends Controller
 
         return view('admin.cursos.editar-form', [
             'curso' => $curso,
+            'clasificaciones' => Clasificacion::get(),
         ]);
     }
 
@@ -88,7 +90,9 @@ class AdminCursosController extends Controller
 
     public function nuevoForm()
     {
-        return view('admin.cursos.nuevo-form');
+        return view('admin.cursos.nuevo-form', [
+            'clasificaciones' => Clasificacion::get(),
+        ]);
     }
 
     public function nuevoGrabar(Request $request)

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 /**
  * App\Models\Curso
@@ -37,7 +38,7 @@ class Curso extends Model
 
     protected $table = 'cursos';
     protected $primaryKey = 'curso_id';
-    protected $fillable = ['nombre', 'descripcion', 'precio', 'portada', 'portada_descripcion'];
+    protected $fillable = ['nombre', 'descripcion', 'precio', 'clasificacion_id', 'portada', 'portada_descripcion'];
 
     public const VALIDATE_RULES = [
         'nombre' => 'required|min:2',
@@ -54,6 +55,29 @@ class Curso extends Model
         'precio.numeric' => 'El precio debe ser un número.',
         'precio.min' => 'El precio no puede ser negativo.',
     ];
+
+    /*
+    |--------------------------------------------------------------------------
+    |   Accesors & Mutators
+    |--------------------------------------------------------------------------
+    */
+
+    protected function precio(): Attribute
+    {
+
+        return Attribute::make(
+            get: fn($value) => $value/100,
+            set: fn($value) => $value*100,
+        );
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    |   Relaciones
+    |--------------------------------------------------------------------------
+    */
+
 
     public function clasificacion() 
     {

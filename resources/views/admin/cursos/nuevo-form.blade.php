@@ -31,11 +31,32 @@
             </div>
             <div class="mb-2">
                   <label for="precio" class="form-label">Precio</label>
-                  <input type="number" class="form-control" id="precio" name="precio" value="{{old('precio')}}">
+                  <input type="number" class="form-control" id="precio" name="precio" step="any" value="{{old('precio')}}">
                   @error('precio')
                   <div class="text-danger">{{ $errors->first('precio') }}</div>
 
                   @enderror
+            </div>
+            <div class="mb-2">
+                  <label for="clasificacion_id" class="form-label">Clasificacion</label>
+                  <select
+                        class="form-control"
+                        id="clasificacion_id"
+                        name="clasificacion_id">
+                        
+                        @error('clasificacion_id')
+                        <div class="text-danger">{{ $errors->first('clasificacion_id') }}</div>
+                        
+                        @enderror
+                        
+                        @foreach ($clasificaciones as $clasificacion)
+                        <option 
+                        value="{{$clasificacion->clasificacion_id}}"
+                        @selected($clasificacion->clasificacion_id == old('clasificacion_id')) >
+                        {{$clasificacion->nombre}}
+                  </option>
+                  @endforeach
+            </select>
             </div>
             <div class="mb-2">
                   <label for="portada" class="form-label">Portada</label>
