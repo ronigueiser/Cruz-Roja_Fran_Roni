@@ -11,15 +11,13 @@
       <section class="container py-4">
             <h1>Panel de Administración</h1>
 
-            <a href="{{route('admin.comentarios.listado')}}" class="btn btn-primary my-2 mb-2">Panel del Blog</a>
-
-            <h2>Cursos</h2>
-            <p>
+            <h2 class="d-inline-block me-3">Cursos</h2>
+            <p class="d-inline-block btn-nuevo btn btn-success">
                   <a href="{{route('admin.cursos.nuevo.form')}}">Publicar nuevo curso</a>
             </p>
             <section class="mb-3">
                   <form action="{{route('admin.cursos.listado')}}" method="get">
-                        <label for="nombre" class="form-label">Titulo</label>
+                        <label for="nombre" class="form-label negrita">Buscar por nombre del curso</label>
                         <div  class="d-flex justify-content-between">
                         <input type="text" name="nombre" id="nombre" class="form-control me-5" value="{{$buscarParams['nombre'] ?? null}}">
                         <button type="submit" class="btn btn-primary">Buscar</button>

@@ -11,7 +11,7 @@
             <div class="cont-det-curso">
                 <h1 class="negrita">{{$curso->nombre}}</h1>
 
-                <p><span class="negrita">Precio:</span> ${{$curso->precio / 100}}</p>
+                <p><span class="negrita">Precio:</span> ${{$curso->precio}}</p>
 
                 <h2>Descripcion del curso</h2>
                 <p>{{$curso->descripcion}}</p>

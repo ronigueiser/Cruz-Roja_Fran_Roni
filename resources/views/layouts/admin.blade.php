@@ -29,7 +29,15 @@
                         <a class="nav-link" aria-current="page" href="{{url('/')}}">Volver a la Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{url('admin/cursos')}}">Panel de Administrador</a>
+                        <a class="nav-link" aria-current="page" href="{{url('admin/cursos')}}">Cursos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('admin/blog')}}">Blog-deprecado</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{url('admin/novedades')}}">Blog</a>
                     </li>
                     <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">

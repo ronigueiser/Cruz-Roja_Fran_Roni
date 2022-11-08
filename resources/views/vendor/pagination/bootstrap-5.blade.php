@@ -29,13 +29,13 @@
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
             <div>
                 <p class="small text-muted">
-                    Mostrando cursos del
+                    Mostrando resultados del
                     <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
                     al
                     <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
                     , de un total de
                     <span class="fw-semibold">{{ $paginator->total() }}</span>
-                    cursos.
+                    resultados.
                 </p>
             </div>
 

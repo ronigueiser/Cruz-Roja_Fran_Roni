@@ -12,7 +12,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('ho
 
 Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'])->name('nosotros');
 
-Route::get('blog', [\App\Http\Controllers\BlogController::class, 'comentarios'])->name('blog');
+Route::get('blog', [\App\Http\Controllers\NovedadesController::class, 'index'])->name('novedades');
 
 Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])
 ->name('ver-cursos')
@@ -55,24 +55,24 @@ Route::prefix('admin/cursos')
 
 });
 
-Route::prefix('admin/blog')
+Route::prefix('admin/novedades')
     ->middleware(['auth'])
-    ->controller(\App\Http\Controllers\AdminBlogController::class)->group(function(){
-    Route::get('/', 'index')->name('admin.comentarios.listado');
+    ->controller(\App\Http\Controllers\AdminNovedadesController::class)->group(function(){
+    Route::get('/', 'index')->name('admin.novedades.listado');
 
-    Route::get('/{id}', 'ver')->name('admin.comentarios.ver')->whereNumber('id');
+    Route::get('/{id}', 'ver')->name('admin.novedades.ver')->whereNumber('id');
 
-    Route::get('/{id}/eliminar', 'eliminarConfirmar')->name('admin.comentarios.eliminar.confirmar')->whereNumber('id');
+    Route::get('/{id}/eliminar', 'eliminarConfirmar')->name('admin.novedades.eliminar.confirmar')->whereNumber('id');
 
-    Route::post('/{id}/eliminar', 'eliminarEjecutar')->name('admin.comentarios.eliminar.ejecutar')->whereNumber('id');
+    Route::post('/{id}/eliminar', 'eliminarEjecutar')->name('admin.novedades.eliminar.ejecutar')->whereNumber('id');
 
-    Route::get('/{id}/editar', 'editarForm')->name('admin.comentarios.editar.form')->whereNumber('id');
+    Route::get('/{id}/editar', 'editarForm')->name('admin.novedades.editar.form')->whereNumber('id');
 
-    Route::post('/{id}/editar', 'editarEjecutar')->name('admin.comentarios.editar.ejecutar')->whereNumber('id');
+    Route::post('/{id}/editar', 'editarEjecutar')->name('admin.novedades.editar.ejecutar')->whereNumber('id');
 
-    Route::get('/nuevo', 'nuevoForm')->name('admin.comentarios.nuevo.form');
+    Route::get('/nuevo', 'nuevoForm')->name('admin.novedades.nuevo.form');
 
-    Route::post('/nuevo', 'nuevoGrabar')->name('admin.comentarios.nuevo.grabar');
+    Route::post('/nuevo', 'nuevoGrabar')->name('admin.novedades.nuevo.grabar');
 });
 
 /*

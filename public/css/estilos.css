@@ -245,3 +245,8 @@ main {
 .cont-precio {
     align-items:center
 }
+
+.btn-nuevo a{
+    color: white;
+    text-decoration: none;
+}

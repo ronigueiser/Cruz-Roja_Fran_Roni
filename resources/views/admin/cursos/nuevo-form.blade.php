@@ -58,7 +58,7 @@
                         {{$clasificacion->nombre}}
                   </option>
                   @endforeach
-            </select>
+                  </select>
             </div>
             <div class="mb-2">
                   <label for="portada" class="form-label">Portada</label>
