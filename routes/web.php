@@ -31,7 +31,7 @@ Route::post('cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logo
     ->middleware(['auth']);
 
 Route::prefix('admin/cursos')
-    ->middleware(['auth'])
+    ->middleware(['auth', 'mayor-edad'])
     ->controller(\App\Http\Controllers\AdminCursosController::class)->group(function(){
     Route::get('/', 'index')->name('admin.cursos.listado');
 
@@ -100,3 +100,9 @@ Route::get('restablecer-password/{token}', [\App\Http\Controllers\RecuperarPassw
 Route::post('restablecer-password', [\App\Http\Controllers\RecuperarPasswordController::class, 'restablecerPasswordEjecutar'])
 ->name('password.update')
 ->middleware(['guest']);
+
+Route::get('cursos/confirmar-edad', [\App\Http\Controllers\ConfirmarEdadController::class, 'confirmarForm'])
+->name('confirmar-mayoria-edad.form');
+
+Route::post('cursos/confirmar-edad', [\App\Http\Controllers\ConfirmarEdadController::class, 'confirmarEjecutar'])
+->name('confirmar-mayoria-edad.ejecutar');
