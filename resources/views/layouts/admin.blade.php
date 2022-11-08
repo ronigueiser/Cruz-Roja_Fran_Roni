@@ -28,16 +28,21 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{url('/')}}">Volver a la Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{url('admin/cursos')}}">Cursos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{url('admin/blog')}}">Blog-deprecado</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{url('admin/novedades')}}">Blog</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Panel
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" aria-current="page"
+                                    href="{{url('admin/cursos')}}">Administrar Cursos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" aria-current="page"
+                                    href="{{url('admin/novedades')}}">Administrar Blog</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">

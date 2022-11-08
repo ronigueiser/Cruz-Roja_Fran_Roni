@@ -250,3 +250,16 @@ main {
     color: white;
     text-decoration: none;
 }
+
+.titulo-detalle {
+    font-size: 1.15rem;
+    color: #d91e1c;
+}
+.chip-curso {
+    background-color: #991614;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5rem;
+    font-size: 0.875rem;
+    vertical-align: top;
+}

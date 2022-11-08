@@ -13,10 +13,10 @@ class AdminNovedadesController extends Controller
         $builder = Novedad::with(['curso']);
 
         $buscarParams = [
-            'curso_id' => $request->query('curso_id', null),
+            'titulo' => $request->query('titulo', null),
         ];
-        if($buscarParams['curso_id']) {
-            $builder->where('curso_id', 'LIKE', '%' . $buscarParams['curso_id']. '%');
+        if($buscarParams['titulo']) {
+            $builder->where('titulo', 'LIKE', '%' . $buscarParams['titulo']. '%');
         }
         $novedades = $builder->paginate(4)->withQueryString(); //NO ES UN ERROR, EL IDE DICE QUE NO EXISTE PERO FUNCIONA PERFECTO, NO BORRAR
 

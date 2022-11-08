@@ -15,6 +15,15 @@
             <p class="d-inline-block btn-nuevo btn btn-success">
                   <a href="{{route('admin.novedades.nuevo.form')}}">Publicar nueva novedad</a>
             </p>
+            <section class="mb-3">
+                  <form action="{{route('admin.novedades.listado')}}" method="get">
+                        <label for="nombre" class="form-label negrita">Buscar por titulo de la novedad</label>
+                        <div  class="d-flex justify-content-between">
+                        <input type="text" name="titulo" id="titulo" class="form-control me-5" value="{{$buscarParams['titulo'] ?? null}}">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        </div>
+                  </form>
+            </section>
             <table class="table table-bordered table-striped">
                   <thead>
                         <tr>
