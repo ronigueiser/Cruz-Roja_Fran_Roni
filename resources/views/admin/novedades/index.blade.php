@@ -8,8 +8,8 @@
 @section('title', 'Administrar Blog')
 
 @section('main')
-      <section class="container py-4">
-            <h1>Panel de Administración</h1>
+      <section class="container py-4 cont-admin">
+            <h1 class="negrita">Panel de Administración</h1>
 
             <h2 class="d-inline-block me-3">Blog</h2>
             <p class="d-inline-block btn-nuevo btn btn-success">
