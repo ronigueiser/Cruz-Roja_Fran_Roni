@@ -14,8 +14,11 @@ Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'
 
 Route::get('blog', [\App\Http\Controllers\BlogController::class, 'comentarios'])->name('blog');
 
-Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])->name('ver-cursos');
+Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])
+->name('ver-cursos')
+->middleware('taller-completo');
 
+Route::get('contacto', [\App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');
 
 
 Route::get('registrarse', [\App\Http\Controllers\AuthController::class, 'registerForm'])
@@ -31,7 +34,7 @@ Route::post('cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logo
     ->middleware(['auth']);
 
 Route::prefix('admin/cursos')
-    ->middleware(['auth', 'mayor-edad'])
+    ->middleware(['auth'])
     ->controller(\App\Http\Controllers\AdminCursosController::class)->group(function(){
     Route::get('/', 'index')->name('admin.cursos.listado');
 
@@ -101,8 +104,8 @@ Route::post('restablecer-password', [\App\Http\Controllers\RecuperarPasswordCont
 ->name('password.update')
 ->middleware(['guest']);
 
-Route::get('cursos/confirmar-edad', [\App\Http\Controllers\ConfirmarEdadController::class, 'confirmarForm'])
-->name('confirmar-mayoria-edad.form');
+Route::get('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarTallerCompletoController::class, 'confirmarForm'])
+->name('confirmar-taller-completo.form');
 
-Route::post('cursos/confirmar-edad', [\App\Http\Controllers\ConfirmarEdadController::class, 'confirmarEjecutar'])
-->name('confirmar-mayoria-edad.ejecutar');
+Route::post('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarTallerCompletoController::class, 'confirmarEjecutar'])
+->name('confirmar-taller-completo.ejecutar');

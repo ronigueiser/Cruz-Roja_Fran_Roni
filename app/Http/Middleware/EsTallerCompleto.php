@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Session;
 
-class EsMayorDeEdad
+class EsTallerCompleto
 {
     /**
      * Handle an incoming request.
@@ -20,8 +20,8 @@ class EsMayorDeEdad
     {
         // $id = $request->route()->parameter('id');
         // $curso = Curso::findOrFail($id);
-        if (/*$curso->clasificacion_id = 2 && */!Session::has('mayorDeEdad')) {
-            return redirect()->route('confirmar-mayoria-edad.form');
+        if (/*$curso->clasificacion_id = 2 && */!Session::has('tallerCompleto')) {
+            return redirect()->route('confirmar-taller-completo.form');
         }
 
         return $next($request);

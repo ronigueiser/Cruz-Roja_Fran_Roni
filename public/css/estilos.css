@@ -216,3 +216,28 @@ main {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+.card-nosotros {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+}
+
+.card-nosotros:nth-child(1n) {
+    background-color: #fff;
+    
+}
+.card-nosotros:nth-child(2n) {
+    background-color: #d91e1c;
+    color: white;
+}
+
+.card-contacto {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+    background-color: #fff;
+}
+
+.card-contacto h2 {
+    color: #d91e1c;
+}

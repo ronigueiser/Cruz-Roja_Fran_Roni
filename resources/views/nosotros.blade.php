@@ -1,51 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cruz Roja</title>
+@extends('layouts.main') {{-- Esto navega a [resources/views/layouts/main.blade.php] --}}
 
+@section('title', 'Nosotros')
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="<?= url('css/estilos.css'); ?>">
+@section('main')
+<main>
+    <section class="container py-4">
+        <h1 class="negrita mb-5">Nosotros</h1>
 
-</head>
-<body>
-<div id="app">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="<?= url('/') ?>">Cruz Roja</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= url('/'); ?>">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= url('cursos'); ?>">Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= url('admin/cursos'); ?>">Administrar Cursos</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="mb-5 card-nosotros">
+            <h2>Acciones Humanitarias</h2>
+            <p>Desarrollamos acciones humanitarias junto a las comunidades, promoviendo la reducción de riesgos y el
+                desarrollo integral de las personas, construyendo y fortaleciendo las capacidades locales, fomentando la
+                inclusión y participación de todos los grupos sin ninguna distinción o discriminación.</p>
         </div>
-    </nav>
+        <div class="mb-5 card-nosotros">
+            <h2>Siempre Presentes</h2>
+            <p>Desde Cruz Roja estamos presentes en cada gran emergencia, cuando ocurre el desastre y después, cuando
+                los hechos dejan de ser noticia.</p>
+        </div>
+        <div class="mb-5 card-nosotros">
+            <h2>Programas y Servicios</h2>
+            <p>A través de nuestros distintos programas y servicios educativos, deseamos construir una sociedad más
+                justa y más incluyente con los sectores en situación de vulnerabilidad, para que tengan acceso a fuentes
+                de bienestar, seguridad e igualdad de oportunidades.</p>
+        </div>
 
-    <main>
-        <section class="container py-4">
-            <h1>Nosotros :)</h1>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>Francisco Andreo y Roni Gueiser</p>
-    </footer>
-</div>
-</body>
-</html>
+    </section>
+</main>
+@endsection
