@@ -11,11 +11,13 @@
 @section('main')
 <section class="container py-4">
       <h1>Editar un curso</h1>
-      <form action="{{route("admin.cursos.editar.ejecutar", ['id' =>$curso -> curso_id])}}" method="post" enctype="multipart/form-data">
+      <form action="{{route("admin.cursos.editar.ejecutar", ['id'=>$curso -> curso_id])}}" method="post"
+            enctype="multipart/form-data">
             @csrf
             <div class="mb-2">
                   <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" name="nombre" value="{{old('nombre', $curso->nombre)}}">
+                  <input type="text" class="form-control" id="nombre" name="nombre"
+                        value="{{old('nombre', $curso->nombre)}}">
                   @error('nombre')
                   <div class="text-danger">{{ $errors->first('nombre') }}</div>
 
@@ -23,7 +25,8 @@
             </div>
             <div class="mb-2">
                   <label for="descripcion" class="form-label">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{old('descripcion', $curso->descripcion)}}">
+                  <input type="text" class="form-control" id="descripcion" name="descripcion"
+                        value="{{old('descripcion', $curso->descripcion)}}">
                   @error('descripcion')
                   <div class="text-danger">{{ $errors->first('descripcion') }}</div>
 
@@ -31,45 +34,45 @@
             </div>
             <div class="mb-2">
                   <label for="precio" class="form-label">Precio</label>
-                  <input type="number" class="form-control" id="precio" name="precio" value="{{old('precio', $curso->precio)}}" step="any">
-                  @error('precio')
-                  <div class="text-danger">{{ $errors->first('precio') }}</div>
-
+                  <div class="cont-precio d-flex">
+                        <span class="me-3">$</span>
+                        <input type="number" class="form-control" id="precio" name="precio"
+                              value="{{old('precio', $curso->precio)}}" step="any">
+                        @error('precio')
+                        <div class="text-danger">{{ $errors->first('precio') }}</div>
+                  </div>
                   @enderror
             </div>
             <div class="mb-2">
                   <label for="clasificacion_id" class="form-label">Clasificacion</label>
-                  <select
-                        class="form-control"
-                        id="clasificacion_id"
-                        name="clasificacion_id">
-                        
+                  <select class="form-control" id="clasificacion_id" name="clasificacion_id">
+
                         @error('clasificacion_id')
                         <div class="text-danger">{{ $errors->first('clasificacion_id') }}</div>
-                        
+
                         @enderror
-                        
+
                         @foreach ($clasificaciones as $clasificacion)
-                        <option 
-                        value="{{$clasificacion->clasificacion_id}}"
-                        @selected($clasificacion->clasificacion_id == old('clasificacion_id', $curso->clasificacion_id)) >
-                        {{$clasificacion->nombre}}
-                  </option>
-                  @endforeach
-            </select>
+                        <option value="{{$clasificacion->clasificacion_id}}" @selected($clasificacion->clasificacion_id
+                              == old('clasificacion_id', $curso->clasificacion_id)) >
+                              {{$clasificacion->nombre}}
+                        </option>
+                        @endforeach
+                  </select>
             </div>
             @if ($curso->portada != null && file_exists(public_path('img/'.$curso->portada)))
             <img class="img-edit" src="{{url('img/'.$curso->portada)}}" alt="{{$curso->portada_descripcion}}">
             @else
             Imagen default!
-        @endif
+            @endif
             <div class="mb-2">
                   <label for="portada" class="form-label">Portada</label>
-                  <input type="file" class="form-control" id="portada" name="portada" >
+                  <input type="file" class="form-control" id="portada" name="portada">
             </div>
             <div class="mb-2">
                   <label for="portada-desc" class="form-label">Descripción de portada</label>
-                  <input type="text" class="form-control" id="portada-desc" name="portada_descripcion" value="{{old('portada_descripcion', $curso->portada_descripcion)}}">
+                  <input type="text" class="form-control" id="portada-desc" name="portada_descripcion"
+                        value="{{old('portada_descripcion', $curso->portada_descripcion)}}">
             </div>
             <div class="mb-2">
                   <button type="submit" class="btn btn-primary">Modificar curso</button>

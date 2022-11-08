@@ -241,3 +241,7 @@ main {
 .card-contacto h2 {
     color: #d91e1c;
 }
+
+.cont-precio {
+    align-items:center
+}

@@ -43,7 +43,7 @@
                         <tr>
                               <td>{{$curso->curso_id}}</td>
                               <td>{{$curso->nombre}}</td>
-                              <td>{{$curso->precio}}</td>
+                              <td>${{$curso->precio}}</td>
                               <td>{{$curso->clasificacion->abreviatura}}</td>
                               <td>{{$curso->descripcion}}</td>
                               <td>

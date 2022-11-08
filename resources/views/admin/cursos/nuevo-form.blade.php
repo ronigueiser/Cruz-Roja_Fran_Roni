@@ -31,10 +31,12 @@
             </div>
             <div class="mb-2">
                   <label for="precio" class="form-label">Precio</label>
-                  <input type="number" class="form-control" id="precio" name="precio" step="any" value="{{old('precio')}}">
-                  @error('precio')
-                  <div class="text-danger">{{ $errors->first('precio') }}</div>
-
+                  <div class="cont-precio d-flex">
+                        <span class="me-3">$</span>
+                        <input type="number" class="form-control" id="precio" name="precio" step="any" value="{{old('precio')}}">
+                              @error('precio')
+                              <div class="text-danger">{{ $errors->first('precio') }}</div>
+                  </div>
                   @enderror
             </div>
             <div class="mb-2">
