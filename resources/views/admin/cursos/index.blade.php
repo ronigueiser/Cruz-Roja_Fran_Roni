@@ -9,7 +9,7 @@
 
 @section('main')
       <section class="container py-4">
-            <h1>Panel de Administración - Cursos</h1>
+            <h1>Panel de Administración</h1>
 
             <a href="{{route('admin.comentarios.listado')}}" class="btn btn-primary my-2 mb-2">Panel del Blog</a>
 
@@ -17,6 +17,15 @@
             <p>
                   <a href="{{route('admin.cursos.nuevo.form')}}">Publicar nuevo curso</a>
             </p>
+            <section class="mb-3">
+                  <form action="{{route('admin.cursos.listado')}}" method="get">
+                        <label for="nombre" class="form-label">Titulo</label>
+                        <div  class="d-flex justify-content-between">
+                        <input type="text" name="nombre" id="nombre" class="form-control me-5" value="{{$buscarParams['nombre'] ?? null}}">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        </div>
+                  </form>
+            </section>
             <table class="table table-bordered table-striped">
                   <thead>
                         <tr>
@@ -46,5 +55,7 @@
                         @endforeach
                   </tbody>
             </table>
+            {{$cursos->links()}}
         </section>
+
 @endsection

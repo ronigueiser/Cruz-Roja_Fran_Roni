@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\AbstractPaginator;
 use App\Models\Curso;
 use App\Models\Clasificacion;
 
 class AdminCursosController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $cursos = Curso::with(['clasificacion'])->get();
+        $builder = Curso::with(['clasificacion']);
+
+        $buscarParams = [
+            'nombre' => $request->query('nombre', null),
+        ];
+        if($buscarParams['nombre']) {
+            $builder->where('nombre', 'LIKE', '%' . $buscarParams['nombre']. '%');
+        }
+        $cursos = $builder->paginate(4)->withQueryString(); //NO ES UN ERROR, EL IDE DICE QUE NO EXISTE PERO FUNCIONA PERFECTO, NO BORRAR
 
         return view('admin.cursos.index', [
             'cursos' => $cursos,
+            'buscarParams' => $buscarParams,
         ]);
     }
 
