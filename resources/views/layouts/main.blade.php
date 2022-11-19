@@ -75,6 +75,9 @@ Este archivo funciona como nuestro template de base
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('auth.login.form') }}">Iniciar Sesion</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('registrar.usuario') }}">Registrarse</a>
+                        </li>
                         {{-- @endif--}}
                         @endauth
                     </ul>
