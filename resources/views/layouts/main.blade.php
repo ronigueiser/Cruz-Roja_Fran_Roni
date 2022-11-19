@@ -46,8 +46,10 @@ Este archivo funciona como nuestro template de base
                             <a class="nav-link" href="{{url('contacto')}}">Contacto</a>
                         </li>
 
-                        {{-- @if(Auth::check())--}}
-                        @auth
+                        {{-- Si usuario autenticado --}}
+                        @if(Auth::user())
+                        {{-- Si usuario Admin --}}
+                        @if(Auth::user()->esAdmin())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -64,19 +66,20 @@ Este archivo funciona como nuestro template de base
                                 </li>
                             </ul>
                         </li>
+                        @endif
+                        {{-- Fin usuario admin --}}
                         <li class="nav-item">
                             <form action="{{route('auth.logout')}}" method="post">
                                 @csrf
                                 <button type="submit" class="btn nav-link">Cerrar Sesion</button>
                             </form>
                         </li>
-                        {{-- @else--}}
-                        @elseguest
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('auth.login.form') }}">Iniciar Sesion</a>
                         </li>
-                        {{-- @endif--}}
-                        @endauth
+                        @endif
+                        {{-- Fin usuario autenticado --}}
                     </ul>
                 </div>
             </div>

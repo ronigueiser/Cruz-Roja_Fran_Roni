@@ -57,6 +57,22 @@ class Usuario extends User
         'password.required' => 'La password no puede quedar vacía.',
     ];
 
+    public function role()
+    {
+        return $this->belongsTo(
+            Role::class,
+            'role_id',
+            'role_id',
+        );
+    }
 
+    public function esAdmin()
+    {
+        if ($this->role->nombre == 'admin') {
+
+            return true;
+        }
+        return false;
+    }
 
 }
