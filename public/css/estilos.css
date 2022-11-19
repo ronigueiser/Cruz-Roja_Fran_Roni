@@ -53,17 +53,16 @@ main {
 .cont-1 {
     gap: 2%;
     height: 300px;
-    
 }
 
-.cont-1>div {
+.cont-1 > div {
     width: 48%;
     display: flex;
     align-items: center;
     padding: 2rem;
 }
 
-.cont-1>div:last-child {
+.cont-1 > div:last-child {
     background: #d91e1c;
     color: white;
 }
@@ -172,7 +171,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .cont-auth {
@@ -224,7 +222,6 @@ main {
 
 .card-nosotros:nth-child(1n) {
     background-color: #fff;
-    
 }
 .card-nosotros:nth-child(2n) {
     background-color: #d91e1c;
@@ -243,10 +240,10 @@ main {
 }
 
 .cont-precio {
-    align-items:center
+    align-items: center;
 }
 
-.btn-nuevo a{
+.btn-nuevo a {
     color: white;
     text-decoration: none;
 }
@@ -263,7 +260,7 @@ main {
     font-size: 0.875rem;
     vertical-align: top;
 }
-.cont-admin h1{
+.cont-admin h1 {
     color: #d91e1c;
     margin-bottom: 3rem;
 }
