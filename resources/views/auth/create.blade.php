@@ -4,23 +4,23 @@
 
 
 @section('main')
-
-    <h2>Register</h2>
-    <form method="POST" action="{{ route('register') }}" class="container">
+<section class="container cont-auth">
+    <h1>Registrarse</h1>
+    <form method="POST" action="{{ route('register') }}" class="d-flex flex-column mb-3">
         @csrf
-        <div class="form-group">
-            <label for="email">Email:</label>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email">
         </div>
 
-        <div class="form-group">
-            <label for="password">Password:</label>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
 
-        <div class="form-group">
-            <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <button type="submit" class="btn">Registrarse</button>
     </form>
+    <p>¿Ya tenés una cuenta? <a href="{{route('auth.login.form')}}">Hacé click acá para iniciar sesión.</a></p>
+</section>
 
 @endsection
