@@ -15,7 +15,7 @@
             @endif
             <h2 class="negrita">{{$curso->nombre}}</h2>
             <p>{{$curso->descripcion}}</p>
-            <p>Precio: <span class="negrita">${{$curso->precio/100}}</span></p>
+            <p>Precio: <span class="negrita">${{$curso->precio}}</span></p>
         </li>
         @endforeach
 
