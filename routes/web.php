@@ -34,6 +34,15 @@ Route::post('cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logo
     ->name('auth.logout')
     ->middleware(['auth']);
 
+
+Route::get('/register', [\App\Http\Controllers\RegistrationController::class, 'create'])
+    ->name('registrar.usuario');
+Route::post('register', [\App\Http\Controllers\RegistrationController::class, 'store'])
+    ->name('register');
+
+
+
+
 Route::prefix('admin/cursos')
     ->middleware(['auth', 'esAdmin'])
     ->controller(\App\Http\Controllers\AdminCursosController::class)->group(function () {
@@ -107,4 +116,6 @@ Route::get('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarT
     ->name('confirmar-taller-completo.form');
 
 Route::post('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarTallerCompletoController::class, 'confirmarEjecutar'])
+
     ->name('confirmar-taller-completo.ejecutar');
+
