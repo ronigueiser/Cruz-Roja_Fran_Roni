@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class UsuarioSeeder extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,20 +15,16 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('usuarios')->insert([
+        DB::table('roles')->insert([
             [
-                'usuario_id' => 1,
-                'email' => 'roni@davinci.edu.ar',
-                'password' => \Hash::make('1234'),
-                'role_id' => 2,
+                'role_id' => 1,
+                'nombre' => 'admin',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'usuario_id' => 2,
-                'email' => 'fran@davinci.edu.ar',
-                'password' => \Hash::make('1234'),
-                'role_id' => 1,
+                'role_id' => 2,
+                'nombre' => 'basic',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
