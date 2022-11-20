@@ -74,7 +74,7 @@ class AdminUsuariosController extends Controller
         $usuario = Usuario::findOrFail($id);
 
         $data = $request->except(['_token']);
-        
+
         $request->validate(Usuario::VALIDATE_RULES, Usuario::VALIDATE_MESSAGES);
 
 
