@@ -30,7 +30,7 @@ class UsuarioSeeder extends Seeder
                 'email' => 'fran@davinci.edu.ar',
                 'password' => \Hash::make('1234'),
                 'role_id' => 1,
-                'curso_id' => 0,
+                'curso_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
