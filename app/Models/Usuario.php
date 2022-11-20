@@ -73,6 +73,14 @@ class Usuario extends User
         'password.required' => 'La password no puede quedar vacía.',
     ];
 
+    public function curso()
+    {
+        return $this->belongsTo(
+            Curso::class,
+            'curso_id',
+            'curso_id',
+        );
+    }
     public function role()
     {
         return $this->belongsTo(

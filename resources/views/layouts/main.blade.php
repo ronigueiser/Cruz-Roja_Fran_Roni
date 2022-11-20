@@ -64,6 +64,11 @@ Este archivo funciona como nuestro template de base
                                     <a class="dropdown-item" aria-current="page"
                                         href="{{url('admin/novedades')}}">Administrar Blog</a>
                                 </li>
+
+                                <li>
+                                    <a class="dropdown-item" aria-current="page"
+                                        href="{{url('admin/usuarios')}}">Administrar Usuarios</a>
+                                </li>
                             </ul>
                         </li>
                         @endif

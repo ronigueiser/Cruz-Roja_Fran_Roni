@@ -83,6 +83,26 @@ Route::prefix('admin/novedades')
         Route::post('/nuevo', 'nuevoGrabar')->name('admin.novedades.nuevo.grabar');
     });
 
+Route::prefix('admin/usuarios')
+    ->middleware(['auth', 'esAdmin'])
+    ->controller(\App\Http\Controllers\AdminUsuariosController::class)->group(function () {
+        Route::get('/', 'index')->name('admin.usuarios.listado');
+
+        Route::get('/{id}', 'ver')->name('admin.usuarios.ver')->whereNumber('id');
+
+        Route::get('/{id}/eliminar', 'eliminarConfirmar')->name('admin.usuarios.eliminar.confirmar')->whereNumber('id');
+
+        Route::post('/{id}/eliminar', 'eliminarEjecutar')->name('admin.usuarios.eliminar.ejecutar')->whereNumber('id');
+
+        Route::get('/{id}/editar', 'editarForm')->name('admin.usuarios.editar.form')->whereNumber('id');
+
+        Route::post('/{id}/editar', 'editarEjecutar')->name('admin.usuarios.editar.ejecutar')->whereNumber('id');
+
+        Route::get('/nuevo', 'nuevoForm')->name('admin.usuarios.nuevo.form');
+
+        Route::post('/nuevo', 'nuevoGrabar')->name('admin.usuarios.nuevo.grabar');
+    });
+
 /*
 AUTENTICACION
 */
