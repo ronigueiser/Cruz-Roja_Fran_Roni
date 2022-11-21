@@ -41,7 +41,7 @@
 
             <div class="mb-2">
                 <label for="detalle" class="form-label">Detalle</label>
-                <input type="text" class="form-control" id="detalle" name="detalle" value="{{old('detalle', $novedad->detalle)}}">
+                <textarea class="form-control" id="detalle" name="detalle" value="{{old('detalle', $novedad->detalle)}}">{{old('detalle', $novedad->detalle)}}</textarea>
 
                 @error('detalle')
                 <div class="text-danger">{{ $errors->first('detalle') }}</div>

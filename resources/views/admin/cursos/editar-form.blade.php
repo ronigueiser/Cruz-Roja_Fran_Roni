@@ -25,8 +25,8 @@
             </div>
             <div class="mb-2">
                   <label for="descripcion" class="form-label">Descripción</label>
-                  <input type="text" class="form-control" id="descripcion" name="descripcion"
-                        value="{{old('descripcion', $curso->descripcion)}}">
+                  <textarea class="form-control" id="descripcion" name="descripcion"
+                        value="{{old('descripcion', $curso->descripcion)}}">{{old('descripcion', $curso->descripcion)}} </textarea>
                   @error('descripcion')
                   <div class="text-danger">{{ $errors->first('descripcion') }}</div>
 
