@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('usuario_id');
             $table->string('email')->unique();
             $table->string('password');
-            $table->unsignedTinyInteger('role_id')->default(0);
+            $table->unsignedTinyInteger('role_id')->default(2);
             $table->unsignedTinyInteger('curso_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
