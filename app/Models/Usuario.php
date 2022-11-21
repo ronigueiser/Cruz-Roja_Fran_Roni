@@ -63,14 +63,13 @@ class Usuario extends User
 
 
     public const VALIDATE_RULES = [
-        'email' => 'required|min:2',
+        'email' => 'email:rcf,dns',
         'password' => 'required',
     ];
 
     public const VALIDATE_MESSAGES = [
-        'email.required' => 'El email no puede quedar vacío.',
-        'email.min' => 'El email debe tener al menos :min caracteres y un @.',
-        'password.required' => 'La password no puede quedar vacía.',
+        'email.email' => 'El email debe tener un formato como el siguiente: ejemplo@mail.com',
+        'password.required' => 'La contraseña no puede quedar vacía.',
     ];
 
     public function curso()

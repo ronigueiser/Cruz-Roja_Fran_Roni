@@ -24,13 +24,14 @@
         <div class="mb-3">
             <label for="password" class="form-label"> Password</label>
             <input type="password" name="password" id="password" class="form-control">
+            @error('password')
+            <div class="text-danger">{{ $errors->first('password') }}</div>
+            @enderror
         </div>
-        @error('password')
-        <div class="text-danger">{{ $errors->first('password') }}</div>
-        @enderror
 
         <button type="submit" class="btn">Ingresar</button>
     </form>
-    {{-- <p>¿Olvidaste tu contraseña? <a href="{{route('password.email')}}">Hacé click acá para restablecerla.</a></p> --}}
+    {{-- <p>¿Olvidaste tu contraseña? <a href="{{route('password.email')}}">Hacé click acá para restablecerla.</a></p>
+    --}}
 </section>
 @endsection

@@ -15,12 +15,9 @@ class RegistrationController extends Controller
     }
 
 
-    public function store()
+    public function store(Request $request)
     {
-        $this->validate(request(), [
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+        $request->validate(Usuario::VALIDATE_RULES, Usuario::VALIDATE_MESSAGES);
 
         $user = Usuario::create(request(['email', 'password']));
 
