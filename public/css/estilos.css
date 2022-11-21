@@ -139,12 +139,12 @@ main {
     max-width: 300px;
 }
 
-.cont-det-curso h1 {
+.cont-det-curso h1, .cont-det-novedad h1 {
     color: #d91e1c;
     margin-top: 2rem;
 }
 
-.curso-det-img {
+.curso-det-img,.novedad-det-img {
     max-width: 50%;
     margin: auto;
 }
@@ -263,4 +263,10 @@ main {
 .cont-admin h1 {
     color: #d91e1c;
     margin-bottom: 3rem;
+}
+
+.novedad-img {
+    width: 50%;
+    border-radius: 0.5rem;
+    margin: auto;
 }

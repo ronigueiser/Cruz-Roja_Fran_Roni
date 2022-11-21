@@ -22,7 +22,7 @@ class CursosSeeder extends Seeder
                 'descripcion' => 'El/La Técnico/a Superior en Hemoterapia desarrollará su ejercicio como profesional en establecimientos de salud públicos o privados, obras sociales en todos los niveles de atención y programas sanitarios, sistema educativo de gestión pública y privada, organizaciones gubernamentales y no gubernamentales, establecimientos industriales, empresas, u otras organizaciones.',
                 'precio' => 1000000,
                 'clasificacion_id' => 2,
-                'portada' => '20221017001044_tecnicatura-superior-en-hemoterapia.jpg',
+                'portada' => '20221121173632_tecnicatura-superior-en-hemoterapia.jpg',
                 'portada_descripcion' => 'Adultos tomándose la presión',
                 'created_at' => now(),
                 'updated_at' => now(),

@@ -31,6 +31,6 @@
 
         <button type="submit" class="btn">Ingresar</button>
     </form>
-    <p>¿Olvidaste tu contraseña? <a href="{{route('password.email')}}">Hacé click acá para restablecerla.</a></p>
+    {{-- <p>¿Olvidaste tu contraseña? <a href="{{route('password.email')}}">Hacé click acá para restablecerla.</a></p> --}}
 </section>
 @endsection

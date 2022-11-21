@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('titulo');
             $table->tinyInteger('curso_id');
             $table->text('detalle');
+            $table->string('portada', 255)->nullable();
+            $table->string('portada_descripcion', 255)->nullable();
             $table->timestamps();
         });
     }

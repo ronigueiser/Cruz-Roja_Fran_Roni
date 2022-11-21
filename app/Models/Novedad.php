@@ -9,7 +9,7 @@ class Novedad extends Model
 {
     protected $table = 'novedades';
     protected $primaryKey = 'novedad_id';
-    protected $fillable = ['titulo', 'curso_id', 'detalle'];
+    protected $fillable = ['titulo', 'curso_id', 'detalle', 'portada', 'portada_descripcion'];
 
     public const VALIDATE_RULES = [
         'titulo' => 'required|min:6',

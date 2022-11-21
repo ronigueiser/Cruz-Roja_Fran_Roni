@@ -47,6 +47,20 @@
                 <div class="text-danger">{{ $errors->first('detalle') }}</div>
                 @enderror
             </div>
+            @if ($novedad->portada != null && file_exists(public_path('img/'.$novedad->portada)))
+            <img class="img-edit" src="{{url('img/'.$novedad->portada)}}" alt="{{$novedad->portada_descripcion}}">
+            @else
+            Imagen default!
+            @endif
+            <div class="mb-2">
+                  <label for="portada" class="form-label">Portada</label>
+                  <input type="file" class="form-control" id="portada" name="portada">
+            </div>
+            <div class="mb-2">
+                  <label for="portada-desc" class="form-label">Descripción de portada</label>
+                  <input type="text" class="form-control" id="portada-desc" name="portada_descripcion"
+                        value="{{old('portada_descripcion', $novedad->portada_descripcion)}}">
+            </div>
             <div class="mb-2">
                 <button type="submit" class="btn btn-primary">Modificar novedad</button>
           </div>

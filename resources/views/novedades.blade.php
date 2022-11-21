@@ -19,6 +19,11 @@ Debemos aclarar en que espacio "cedido" por el template queremos ubicar el conte
     <ul class="cont-blog">
         @foreach ($novedades as $novedad)
         <li class="item-blog">
+            @if ($novedad->portada != null && file_exists(public_path('img/'.$novedad->portada)))
+            <img class="d-block mb-3 novedad-img" src="{{url('img/'.$novedad->portada)}}" alt="{{$novedad->portada_descripcion}}">
+            @else
+            <img class="contain d-block mb-3 novedad-img" src="{{url('img/cruz-roja.png')}}" alt="No hay foto para mostrar.">
+            @endif
             <h2 class="negrita d-inline-block me-3" >{{$novedad->titulo}}</h2>
             <span class="chip-curso d-inline-block">{{$novedad->curso->nombre}}</span>
             <h3 class="titulo-detalle negrita">¿Qué hicimos?</h3>

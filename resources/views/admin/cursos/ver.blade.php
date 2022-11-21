@@ -1,4 +1,3 @@
-
 @extends('layouts.main') {{-- Esto navega a [resources/views/layouts/main.blade.php] --}}
 
 @section('title', 'Ver curso')

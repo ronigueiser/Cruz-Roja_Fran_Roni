@@ -74,7 +74,22 @@ class AdminNovedadesController extends Controller
         
         $request->validate(Novedad::VALIDATE_RULES, Novedad::VALIDATE_MESSAGES);
 
+        if($request->hasFile('portada')) {
+            $portada = $request->file('portada');
+
+            $nombrePortada = date('YmdHis') . '_' . \Str::slug($data['titulo']) . '.' . $portada->clientExtension();
+
+            $portada->move(public_path('img'), $nombrePortada);
+
+            $data['portada'] = $nombrePortada;
+            $portadaVieja = $novedad->portada;
+        }
+
         $novedad->update($data);
+
+        if($portadaVieja ?? false) {
+            unlink(public_path('img/' . $portadaVieja));
+        }
 
         return redirect()
             ->route('admin.novedades.listado')
@@ -94,6 +109,16 @@ class AdminNovedadesController extends Controller
         $data = $request->except(['_token']);
 
         $request->validate(Novedad::VALIDATE_RULES, Novedad::VALIDATE_MESSAGES);
+
+        if($request->hasFile('portada')) {
+            $portada = $request->file('portada');
+
+            $nombrePortada = date('YmdHis') . '_' . \Str::slug($data['titulo']) . '.' . $portada->clientExtension();
+
+            $portada->move(public_path('img'), $nombrePortada);
+
+            $data['portada'] = $nombrePortada;
+        }
 
         $novedad = Novedad::create($data);
 

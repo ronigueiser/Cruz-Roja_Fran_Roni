@@ -46,6 +46,15 @@
             @enderror
         </div>
         <div class="mb-2">
+            <label for="portada" class="form-label">Portada</label>
+            <input type="file" class="form-control" id="portada" name="portada">
+        </div>
+        <div class="mb-2">
+            <label for="portada-desc" class="form-label">Descripción de portada</label>
+            <input type="text" class="form-control" id="portada-desc" name="portada_descripcion"
+                value="{{old('portada_descripcion')}}">
+        </div>
+        <div class="mb-2">
             <button type="submit" class="btn btn-primary">Publicar novedad</button>
         </div>
     </form>
