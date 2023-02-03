@@ -19,7 +19,9 @@ body,
 .contain {
     object-fit: contain !important;
 }
-
+.navbar-collapse {
+    flex-grow: 0;
+}
 .navbar-base {
     color: white;
     z-index: 10;
@@ -33,9 +35,29 @@ body,
 }
 .nav-link {
     border: none;
+    transition: 0.3s ease;
 }
 .nav-link:hover {
     color: #d91e1c;
+}
+
+/*
+    |-----------------
+    | Iconos
+    |-----------------
+*/
+
+.fas {
+    font-size: 1.5rem;
+}
+
+.icono-carrito-navbar {
+    font-size: 1.5rem;
+}
+
+.icono-carrito-btn {
+    font-size: 1rem;
+    margin-right: 0.5rem;
 }
 
 main {
@@ -95,7 +117,10 @@ main {
     height: 200px;
     background-color: white;
 }
-
+.card-footer {
+    background: none;
+    border: none;
+}
 .cont-valores {
     display: grid;
     grid-template-columns: auto auto auto;

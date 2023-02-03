@@ -22,6 +22,17 @@ Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])
 Route::get('contacto', [\App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');
 
 
+
+Route::get('carrito', [\App\Http\Controllers\CarritoController::class, 'carritoLista'])
+    ->name('carrito')
+    ->middleware(['auth']);
+
+Route::post('carritoAgregar', [\App\Http\Controllers\CarritoController::class, 'nuevoGrabar'])
+    ->name('carrito.agregar')
+    ->middleware(['auth']);
+
+
+
 Route::get('registrarse', [\App\Http\Controllers\AuthController::class, 'registerForm'])
     ->name('auth.register.form')
     ->middleware(['guest']);
@@ -136,6 +147,4 @@ Route::get('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarT
     ->name('confirmar-taller-completo.form');
 
 Route::post('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarTallerCompletoController::class, 'confirmarEjecutar'])
-
     ->name('confirmar-taller-completo.ejecutar');
-

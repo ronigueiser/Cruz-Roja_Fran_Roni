@@ -4,7 +4,7 @@
 
 @section('main')
 <section class=" container">
-    <h1 class="negrita py-3">Cursos disponibles en la Cruz Roja</h1>
+    <h1 class="negrita py-3">Mi Carrito</h1>
     <ul class="catalogo-cursos">
         @foreach ($cursos as $curso)
         <li class="card cont-curso">
@@ -18,14 +18,10 @@
                 <p>{{$curso->descripcion}}</p>
                 <p>Precio: <span class="negrita">${{$curso->precio}}</span></p>
             </div>
-            <div class="card-footer">
-                <form action="{{ route('carrito.agregar') }}" method="POST">
-                    @csrf
-                    <input hidden type="number" name="curso_id" id="curso_id" value={{$curso->curso_id}} />
-                    <button type="submit" class="btn btn-success agregar-item-carrito"><i
-                            class="fas fa-shopping-cart icono-carrito-btn"></i>Agregar al carrito</button>
-                </form>
-            </div>
+            {{-- <div class="card-footer">
+                <a href="{{ url('/{{$curso->curso_id}}') }}" class="btn btn-success agregar-item-carrito"><i
+                        class="fas fa-shopping-cart icono-carrito-btn"></i>Agregar al carrito</a>
+            </div> --}}
         </li>
         @endforeach
 

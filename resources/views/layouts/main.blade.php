@@ -12,9 +12,8 @@ Este archivo funciona como nuestro template de base
 
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{url('css/estilos.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/svg-with-js.min.css"
-        integrity="sha512-j+8sk90CyNqD7zkw9+AwhRuZdEJRLFBUg10GkELVu+EJqpBv4u60cshAYNOidHRgyaKNKhz+7xgwodircCS01g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" /> 
 
 </head>
 
@@ -44,6 +43,11 @@ Este archivo funciona como nuestro template de base
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('contacto')}}">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <?=
+                            print_r(Auth::id());
+                            ?>
                         </li>
 
                         {{-- Si usuario autenticado --}}
@@ -78,6 +82,9 @@ Este archivo funciona como nuestro template de base
                                 @csrf
                                 <button type="submit" class="btn nav-link">Cerrar Sesion</button>
                             </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('carrito') }}"><i class="fas fa-shopping-cart icono-carrito-navbar"></i></a>
                         </li>
                         @else
                         <li class="nav-item">
