@@ -31,6 +31,12 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Usuario whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Usuario whereUsuarioId($value)
  * @mixin \Eloquent
+ * @property int $role_id
+ * @property int $curso_id
+ * @property-read \App\Models\Curso|null $curso
+ * @property-read \App\Models\Role|null $role
+ * @method static \Illuminate\Database\Eloquent\Builder|Usuario whereCursoId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Usuario whereRoleId($value)
  */
 class Usuario extends User
 {

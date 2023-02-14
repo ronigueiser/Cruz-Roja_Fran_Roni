@@ -13,10 +13,13 @@ class CarritoController extends Controller
 {
     public function carritoLista()
     {
+        $builder = Carrito::with(['curso']);
+        $usuarios_carritos = $builder->get()->where('usuario_id', 2);
         $cursos = Curso::all();
         $usuarios = Usuario::all();
 
         return view('carrito', [
+            'usuarios_carritos' => $usuarios_carritos,
             'cursos' => $cursos,
             'usuarios' => $usuarios,
         ]);

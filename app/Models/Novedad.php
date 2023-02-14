@@ -5,6 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Novedad
+ *
+ * @property int $novedad_id
+ * @property string $titulo
+ * @property int $curso_id
+ * @property string $detalle
+ * @property string|null $portada
+ * @property string|null $portada_descripcion
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Curso|null $curso
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad whereCursoId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad whereDetalle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad whereNovedadId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad wherePortada($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad wherePortadaDescripcion($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad whereTitulo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Novedad whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Novedad extends Model
 {
     protected $table = 'novedades';

@@ -31,6 +31,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  * @mixin \Eloquent
  * @property int $clasificacion_id
  * @method static \Illuminate\Database\Eloquent\Builder|Curso whereClasificacionId($value)
+ * @property-read \App\Models\Clasificacion $clasificacion
  */
 class Curso extends Model
 {
