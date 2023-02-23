@@ -52,7 +52,7 @@ class Usuario extends User
      *
      * @var array
      */
-    protected $fillable = ['email', 'password', 'curso_id'];
+    protected $fillable = ['email', 'username', 'password', 'curso_id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -71,6 +71,10 @@ class Usuario extends User
     public const VALIDATE_RULES = [
         'email' => 'email:rcf,dns',
         'password' => 'required',
+    ];
+
+    public const VALIDATE_RULES_EDIT = [
+        'email' => 'email:rcf,dns',
     ];
 
     public const VALIDATE_MESSAGES = [
@@ -92,6 +96,15 @@ class Usuario extends User
             Role::class,
             'role_id',
             'role_id',
+        );
+    }
+
+    public function carrito() 
+    {
+        return $this->belongsTo(
+            Carrito::class,
+            'usuario_id',
+            'usuario_id',
         );
     }
 

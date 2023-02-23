@@ -12,9 +12,9 @@ Este archivo funciona como nuestro template de base
 
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{url('css/estilos.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" /> 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -44,14 +44,12 @@ Este archivo funciona como nuestro template de base
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('contacto')}}">Contacto</a>
                         </li>
-                        <li class="nav-item">
-                            <?=
-                            print_r(Auth::id());
-                            ?>
-                        </li>
 
                         {{-- Si usuario autenticado --}}
                         @if(Auth::user())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('perfil') }}">Perfil</a>
+                        </li>
                         {{-- Si usuario Admin --}}
                         @if(Auth::user()->esAdmin())
                         <li class="nav-item dropdown">
@@ -84,7 +82,8 @@ Este archivo funciona como nuestro template de base
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('carrito') }}"><i class="fas fa-shopping-cart icono-carrito-navbar"></i></a>
+                            <a class="nav-link" href="{{ route('carrito') }}"><i
+                                    class="fas fa-shopping-cart icono-carrito-navbar"></i></a>
                         </li>
                         @else
                         <li class="nav-item">

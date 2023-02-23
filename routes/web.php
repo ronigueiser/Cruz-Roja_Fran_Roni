@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])
+    ->name('home');
 
 
-Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'])->name('nosotros');
+Route::get('nosotros', [\App\Http\Controllers\NosotrosController::class, 'index'])
+    ->name('nosotros');
 
 Route::get('blog', [\App\Http\Controllers\NovedadesController::class, 'index'])
     ->name('novedades');
@@ -19,9 +21,22 @@ Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])
     ->name('ver-cursos')
     ->middleware('taller-completo');
 
-Route::get('contacto', [\App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');
+
+Route::get('contacto', [\App\Http\Controllers\ContactoController::class, 'index'])
+    ->name('contacto');
 
 
+Route::get('perfil', [\App\Http\Controllers\UsuariosController::class, 'verPerfil'])
+    ->name('perfil')
+    ->middleware(['auth']);
+
+Route::get('perfil/{id}/editar', [\App\Http\Controllers\UsuariosController::class, 'editarForm'])
+    ->name('perfil.editar.form')
+    ->middleware(['auth']);
+
+Route::post('perfil/{id}/editar', [\App\Http\Controllers\UsuariosController::class, 'editarEjecutar'])
+    ->name('perfil.editar.ejecutar')
+    ->whereNumber('id');
 
 Route::get('carrito', [\App\Http\Controllers\CarritoController::class, 'carritoLista'])
     ->name('carrito')
@@ -31,6 +46,7 @@ Route::post('carritoAgregar', [\App\Http\Controllers\CarritoController::class, '
     ->name('carrito.agregar')
     ->middleware(['auth']);
 
+Route::post('carrito/{id}/eliminar', [\App\Http\Controllers\CarritoController::class, 'eliminarEjecutar'])->name('carrito.eliminar.ejecutar')->whereNumber('id');
 
 
 Route::get('registrarse', [\App\Http\Controllers\AuthController::class, 'registerForm'])
