@@ -3,7 +3,7 @@
 @section('title', 'Carrito')
 
 @section('main')
-<section class="container">
+<section class="container mb-4">
     <h1 class="negrita py-3">Mi Carrito</h1>
     <ul class="carrito-lista d-flex flex-column">
         @foreach ($usuarios_carritos as $usuario_carrito)
@@ -33,6 +33,7 @@
         @endforeach
 
     </ul>
+    <a href="{{url('/mp/test')}}" class="btn btn-primary btn-pagar-carrito">Ir a pagar</a>
 </section>
 
 @endsection

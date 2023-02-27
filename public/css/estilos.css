@@ -304,4 +304,9 @@ main {
 .cont-item-carrito img {
     max-width: 300px;
     width: 50%;
+    object-fit: cover;
+}
+
+.btn-pagar-carrito {
+    display: block;
 }

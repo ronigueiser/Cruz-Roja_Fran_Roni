@@ -22,8 +22,8 @@ class MercadoPagoController extends Controller
         foreach($cursos as $curso) {
             $item = new Item();
 
-            $item->title = $curso->titulo;
-            $item->unit_price = $curso->curso_id;
+            $item->title = $curso->nombre;
+            $item->unit_price = $curso->precio;
             $item->quantity = 1;
             $items[] = $item;
         }

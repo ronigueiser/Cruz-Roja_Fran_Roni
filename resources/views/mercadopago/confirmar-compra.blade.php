@@ -37,9 +37,9 @@
             @foreach ($preference->items as $item)
             <tr>
                 <td>{{$item->title}}</td>
-                <td>{{$item->unit_price}}</td>
+                <td>${{$item->unit_price}}</td>
                 <td>{{$item->quantity}}</td>
-                <td>{{$item->unit_price * $item->quantity}}</td>
+                <td>${{$item->unit_price * $item->quantity}}</td>
             </tr>
 
             @endforeach
