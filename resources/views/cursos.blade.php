@@ -17,6 +17,9 @@
                 <h2 class="negrita">{{$curso->nombre}}</h2>
                 <p>{{$curso->descripcion}}</p>
                 <p>Precio: <span class="negrita">${{$curso->precio}}</span></p>
+                <p>Lugar: {{$curso->lugar}}</p>
+                <p>Fecha: {{$curso->fecha}}</p>
+                <p>Hora: {{$curso->hora}}</p>
             </div>
             <div class="card-footer">
                 <form action="{{ route('carrito.agregar') }}" method="POST">
