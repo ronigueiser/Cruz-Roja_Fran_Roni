@@ -164,3 +164,12 @@ Route::get('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarT
 
 Route::post('cursos/confirmar-taller-completo', [\App\Http\Controllers\ConfirmarTallerCompletoController::class, 'confirmarEjecutar'])
     ->name('confirmar-taller-completo.ejecutar');
+
+
+/* Mercado Pago */
+
+Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'confirmarCompraForm'])->name('mp.confirmarCompraForm');
+
+Route::get('mp/success', [\App\Http\Controllers\MercadoPagoController::class, 'successEjecutar'])->name('mp.success');
+Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pendingEjecutar'])->name('mp.pending');
+Route::get('mp/failure', [\App\Http\Controllers\MercadoPagoController::class, 'failureEjecutar'])->name('mp.failure');
