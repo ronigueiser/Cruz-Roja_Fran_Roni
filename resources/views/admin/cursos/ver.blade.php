@@ -11,9 +11,6 @@
                 <h1 class="negrita">{{$curso->nombre}}</h1>
 
                 <p><span class="negrita">Precio:</span> ${{$curso->precio}}</p>
-                <p><span class="negrita">Dirección:</span> {{$curso->lugar}}</p>
-                <p><span class="negrita">Fecha:</span> {{$curso->fecha}}</p>
-                <p><span class="negrita">Horario:</span> {{$curso->hora}}</p>
 
                 <h2>Descripcion del curso</h2>
                 <p>{{$curso->descripcion}}</p>
