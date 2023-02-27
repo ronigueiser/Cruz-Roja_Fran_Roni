@@ -23,7 +23,7 @@
 
 @section('main')
 <section class=" container">
-    <h1 class="negrita py-3">Resumen de la compra</h1>
+    <h1 class="negrita py-3">Completar compra</h1>
     <table class="mb-3 table table-stripped table-bordered">
         <thead>
             <tr>
@@ -44,15 +44,9 @@
 
             @endforeach
         </tbody>
-        <tfoot>
-            <tr>
-              <th colspan="3" class="text-end">Total</th>
-              <td>${{$manager->getTotalPrice()}}</td>
-            </tr>
-           </tfoot>
     </table>
-    <div class="text-end" id="mp-wrapper"></div>
 </section>
 
+<div id="mp-wrapper"></div>
 
 @endsection

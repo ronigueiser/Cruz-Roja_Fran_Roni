@@ -17,14 +17,14 @@ class ClasificacionSeeder extends Seeder
     {
         DB::table('clasificaciones')->insert([
             [
-                'clasificacion_id' => 1,
+                // 'clasificacion_id' => 1,
                 'nombre' => 'Apta Para Todo Público',
                 'abreviatura' => 'ATP',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'clasificacion_id' => 2,
+                // 'clasificacion_id' => 2,
                 'nombre' => 'Solo Para Mayores De 18 Años',
                 'abreviatura' => 'M18',
                 'created_at' => now(),
