@@ -26,6 +26,9 @@ class MercadoPagoManager
             $newItem->title = $item->curso->nombre;
             $newItem->unit_price = $item->curso->precio;
             $newItem->quantity = 1;
+            $newItem->lugar = $item->curso->lugar;
+            $newItem->fecha = $item->curso->fecha;
+            $newItem->hora = $item->curso->hora;
             $newItems[] = $item;
 
             $this->totalPrice += $newItem->unit_price * $newItem->quantity;

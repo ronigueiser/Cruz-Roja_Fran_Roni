@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use App\Models\Carrito;
+use App\Models\Compra;
 use App\Payments\MercadoPagoManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -67,7 +68,27 @@ class MercadoPagoController extends Controller
         ]);
     }
 
-    public function successEjecutr(Request $request)
-    {
+    public function successEjecutar(Request $request)
+    {   
+        $usuarios_carrito = Carrito::with(['curso'])->get()->where('usuario_id', Auth::id());
+        $id = Auth::id();
+        $data = [];
+
+        foreach ($usuarios_carrito as $item) {
+            $data = [
+                'mp_payment_id' => $request->payment_id,
+                'carrito_id' => $item->carrito_id,
+                'curso_id' => $item->curso_id,
+                'usuario_id' => Auth::id(),
+                'precio' => $item->curso->precio,
+                'cantidad' => 1,
+            ];
+            $compra = Compra::create($data);
+            $carrito = Carrito::destroy($item->item_carrito_id);
+        }
+        return redirect()->route('carrito')
+            ->with('status.message', 'Tu compra se realizó con éxito. Podés ver tu historial de compras en tu perfil.')
+            ->with('status.type', 'success');
+        
     }
 }

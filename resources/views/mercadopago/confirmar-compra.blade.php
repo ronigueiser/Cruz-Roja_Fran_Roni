@@ -24,11 +24,15 @@
 @section('main')
 <section class=" container">
     <h1 class="negrita py-3">Resumen de la compra</h1>
-    <table class="mb-3 table table-stripped table-bordered">
+    <p>Verificá que todos los datos estén correctos antes de proceder con el pago.</p>
+    <table class="mb-3 table table-striped table-bordered">
         <thead>
             <tr>
                 <th>Titulo</th>
                 <th>Precio</th>
+                <th>Lugar</th>
+                <th>Fecha</th>
+                <th>Hora</th>
                 <th>Cantidad</th>
                 <th>Subtotal</th>
             </tr>
@@ -38,6 +42,9 @@
             <tr>
                 <td>{{$item->title}}</td>
                 <td>${{$item->unit_price}}</td>
+                <td>{{$item->lugar}}</td>
+                <td>{{$item->fecha}}</td>
+                <td>{{$item->hora}}</td>
                 <td>{{$item->quantity}}</td>
                 <td>${{$item->unit_price * $item->quantity}}</td>
             </tr>
@@ -46,7 +53,7 @@
         </tbody>
         <tfoot>
             <tr>
-              <th colspan="3" class="text-end">Total</th>
+              <th colspan="6">Total</th>
               <td>${{$manager->getTotalPrice()}}</td>
             </tr>
            </tfoot>

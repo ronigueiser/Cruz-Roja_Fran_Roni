@@ -43,11 +43,13 @@ class CarritoController extends Controller
         $carrito_id = $usuarios_carrito->value('carrito_id');
 
         $usuarios_items_carrito = DB::table('carrito')->where('usuario_id', Auth::id())->where('curso_id', $request->input(['curso_id']));
-        $curso_usuario = $usuarios_items_carrito->value('curso_id');
+        $usuarios_items_compras = DB::table('compras')->where('usuario_id', Auth::id())->where('curso_id', $request->input(['curso_id']));
+        $curso_usuario_carrito = $usuarios_items_carrito->value('curso_id');
+        $curso_usuario_compra = $usuarios_items_compras->value('curso_id');
 
         $id = Auth::id();
 
-        if (!$curso_usuario) {
+        if (!$curso_usuario_carrito && !$curso_usuario_compra) {
             $data = [
                 'carrito_id' => $carrito_id ? $carrito_id : substr(bin2hex(random_bytes(15)), 15),
                 'curso_id' => $request->input(['curso_id']),
@@ -56,7 +58,7 @@ class CarritoController extends Controller
             $carrito = Carrito::create($data);
             return redirect()->route('ver-cursos')
                 ->with('status.message', 'El curso <b>' . e($carrito->nombre) . '</b> se agregó a tu carrito.')
-                ->with('status.type', 'success');;
+                ->with('status.type', 'success');
         } else {
             return redirect()->route('ver-cursos')
                 ->with('status.message', 'Ya agregaste este curso a tu carrito.')
