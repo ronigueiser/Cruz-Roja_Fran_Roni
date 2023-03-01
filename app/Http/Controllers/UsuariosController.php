@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use App\Models\Carrito;
+use App\Compras\ComprasManager;
 use App\Http\Requests\StoreusuariosRequest;
 use App\Http\Requests\UpdateusuariosRequest;
+use App\Models\Compra;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -16,10 +18,19 @@ class UsuariosController extends Controller
     {
         $builder = Carrito::with(['curso']);
         $usuarios_carritos = $builder->get()->where('usuario_id', Auth::id());
+        $builder = Compra::with(['curso']);
+        $usuarios_compras = $builder->orderBy('created_at', 'DESC')->get()->where('usuario_id', Auth::id())->groupBy('mp_payment_id');
+        $total_compras = $usuarios_compras->sum('precio');
         $usuario = Usuario::findOrFail(Auth::id());
 
+        $manager = new ComprasManager();
+        $manager->setItems($usuarios_compras);
+
         return view('perfil', [
+            'manager' => $manager,
             'usuarios_carritos' => $usuarios_carritos,
+            'usuarios_compras' => $usuarios_compras,
+            'total_compras' => $total_compras,
             'usuario' => $usuario,
         ]);
     }

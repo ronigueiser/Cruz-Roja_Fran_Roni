@@ -108,6 +108,15 @@ class Usuario extends User
         );
     }
 
+    public function compra() 
+    {
+        return $this->belongsTo(
+            Compra::class,
+            'usuario_id',
+            'usuario_id',
+        );
+    }
+
     public function esAdmin()
     {
         if ($this->role->nombre == 'admin') {
