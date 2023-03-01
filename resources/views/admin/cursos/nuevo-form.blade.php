@@ -39,20 +39,45 @@
                   </div>
                   @enderror
             </div>
+          <div class="mb-2">
+              <label for="lugar" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="lugar" name="lugar" value="{{old('lugar')}}">
+              @error('lugar')
+              <div class="text-danger">{{ $errors->first('lugar') }}</div>
+
+              @enderror
+          </div>
+          <div class="mb-2">
+              <label for="hora" class="form-label">Horario de comienzo</label>
+              <input type="text" class="form-control" id="hora" name="hora" value="{{old('hora')}}" placeholder="** : ** (escribir de esta manera el horario)">
+              @error('hora')
+              <div class="text-danger">{{ $errors->first('hora') }}</div>
+
+              @enderror
+          </div>
+          <div class="mb-2">
+              <label for="fecha" class="form-label">Dia del curso</label>
+              <input type="date" class="form-control" id="fecha" name="fecha" min="2023-01-01" max="2030-01-01"
+                     value="{{old('fecha')}}">
+              @error('fecha')
+              <div class="text-danger">{{ $errors->first('fecha') }}</div>
+
+              @enderror
+          </div>
             <div class="mb-2">
                   <label for="clasificacion_id" class="form-label">Clasificacion</label>
                   <select
                         class="form-control"
                         id="clasificacion_id"
                         name="clasificacion_id">
-                        
+
                         @error('clasificacion_id')
                         <div class="text-danger">{{ $errors->first('clasificacion_id') }}</div>
-                        
+
                         @enderror
-                        
+
                         @foreach ($clasificaciones as $clasificacion)
-                        <option 
+                        <option
                         value="{{$clasificacion->clasificacion_id}}"
                         @selected($clasificacion->clasificacion_id == old('clasificacion_id')) >
                         {{$clasificacion->nombre}}
