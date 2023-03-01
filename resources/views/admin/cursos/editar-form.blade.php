@@ -43,6 +43,33 @@
                   </div>
                   @enderror
             </div>
+          <div class="mb-2">
+              <label for="lugar" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="lugar" name="lugar"
+                     value="{{old('lugar', $curso->lugar)}}">
+              @error('lugar')
+              <div class="text-danger">{{ $errors->first('lugar') }}</div>
+
+              @enderror
+          </div>
+          <div class="mb-2">
+              <label for="hora" class="form-label">Comienzo del curso</label>
+              <input type="text" class="form-control" id="hora" name="hora" placeholder="** : ** (escribir de esta manera el horario)"
+                     value="{{old('hora', $curso->hora)}}">
+              @error('hora')
+              <div class="text-danger">{{ $errors->first('hora') }}</div>
+
+              @enderror
+          </div>
+          <div class="mb-2">
+              <label for="fecha" class="form-label">Dia del curso</label>
+              <input type="date" class="form-control" id="fecha" name="fecha" mid="2023-01-01" max="2030-01-01"
+                     value="{{old('fecha', $curso->fecha)}}">
+              @error('fecha')
+              <div class="text-danger">{{ $errors->first('fecha') }}</div>
+
+              @enderror
+          </div>
             <div class="mb-2">
                   <label for="clasificacion_id" class="form-label">Clasificacion</label>
                   <select class="form-control" id="clasificacion_id" name="clasificacion_id">

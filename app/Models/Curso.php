@@ -39,7 +39,7 @@ class Curso extends Model
 
     protected $table = 'cursos';
     protected $primaryKey = 'curso_id';
-    protected $fillable = ['nombre', 'descripcion', 'precio', 'clasificacion_id', 'portada', 'portada_descripcion'];
+    protected $fillable = ['nombre', 'descripcion', 'precio', 'clasificacion_id', 'portada', 'portada_descripcion','lugar','hora','fecha'];
 
     public const VALIDATE_RULES = [
         'nombre' => 'required|min:2',
@@ -80,7 +80,7 @@ class Curso extends Model
     */
 
 
-    public function clasificacion() 
+    public function clasificacion()
     {
         return $this->belongsTo(
             Clasificacion::class,
