@@ -63,7 +63,7 @@
           </div>
           <div class="mb-2">
               <label for="fecha" class="form-label">Dia del curso</label>
-              <input type="date" class="form-control" id="fecha" name="fecha" mid="2023-01-01" max="2030-01-01"
+              <input type="date" class="form-control" id="fecha" name="fecha" min="2023-01-01" max="2030-01-01"
                      value="{{old('fecha', $curso->fecha)}}">
               @error('fecha')
               <div class="text-danger">{{ $errors->first('fecha') }}</div>
