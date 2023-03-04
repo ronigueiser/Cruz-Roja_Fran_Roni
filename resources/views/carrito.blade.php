@@ -5,6 +5,7 @@
 @section('main')
 <section class="container mb-4">
     <h1 class="negrita py-3">Mi Carrito</h1>
+    @if (!empty($usuarios_carritos))
     <ul class="carrito-lista d-flex flex-column">
         @foreach ($usuarios_carritos as $usuario_carrito)
         <li class="card cont-item-carrito d-flex flex-row mb-4">
@@ -22,7 +23,8 @@
                 <form action="{{route('carrito.eliminar.ejecutar', ['id' =>$usuario_carrito -> item_carrito_id])}}"
                     method="post">
                     @csrf
-                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash pe-2"></i> Eliminar</button>
+                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash pe-2"></i>
+                        Eliminar</button>
                 </form>
             </div>
             {{-- <div class="card-footer">
@@ -31,8 +33,10 @@
             </div> --}}
         </li>
         @endforeach
-
     </ul>
+    @else
+    <p>Aún no agregaste elementos a tu carrito.</p>
+    @endif
     <a href="{{url('/mp/test')}}" class="btn btn-primary btn-pagar-carrito">Ir a pagar</a>
 </section>
 

@@ -49,7 +49,15 @@ class CarritoController extends Controller
 
         $id = Auth::id();
 
-        if (!$curso_usuario_carrito && !$curso_usuario_compra) {
+        if ($curso_usuario_carrito) {
+            return redirect()->route('ver-cursos')
+                ->with('status.message', 'Ya agregaste este curso a tu carrito.')
+                ->with('status.type', 'danger');
+        } else if ($curso_usuario_compra) {
+            return redirect()->route('ver-cursos')
+                ->with('status.message', 'Ya adquiriste este curso. No podés volver a participar, pero no hay problema, ¡abrimos nuevos cursos todos los meses!')
+                ->with('status.type', 'danger');
+        } else {
             $data = [
                 'carrito_id' => $carrito_id ? $carrito_id : substr(bin2hex(random_bytes(15)), 15),
                 'curso_id' => $request->input(['curso_id']),
@@ -59,10 +67,6 @@ class CarritoController extends Controller
             return redirect()->route('ver-cursos')
                 ->with('status.message', 'El curso <b>' . e($carrito->nombre) . '</b> se agregó a tu carrito.')
                 ->with('status.type', 'success');
-        } else {
-            return redirect()->route('ver-cursos')
-                ->with('status.message', 'Ya agregaste este curso a tu carrito.')
-                ->with('status.type', 'danger');
         }
 
         // $data = array_push($data,);
