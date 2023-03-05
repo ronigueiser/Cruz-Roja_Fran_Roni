@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\AbstractPaginator;
 use App\Models\Usuario;
 use App\Models\Curso;
+use App\Models\Compra;
 use App\Models\Role;
+use App\Compras\ComprasManager;
 
 class AdminUsuariosController extends Controller
 {
@@ -30,10 +32,17 @@ class AdminUsuariosController extends Controller
 
     public function ver($id)
     {
+        $builder = Compra::with(['curso']);
+        $usuarios_compras = $builder->orderBy('created_at', 'DESC')->get()->where('usuario_id', $id)->groupBy('mp_payment_id');
+
+        $manager = new ComprasManager();
+        $manager->setItems($usuarios_compras);
+
         $usuario = Usuario::findOrFail($id);
 
         return view('admin.usuarios.ver', [
             'usuario' => $usuario,
+            'manager' => $manager,
         ]);
     }
 

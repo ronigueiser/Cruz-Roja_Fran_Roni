@@ -29,9 +29,9 @@
             <thead>
                   <tr>
                         <th>ID</th>
+                        <th>Usuario</th>
                         <th>Email</th>
                         <th>Rol</th>
-                        <th>Curso</th>
                         <th>Acciones</th>
                   </tr>
             </thead>
@@ -40,13 +40,9 @@
 
                   <tr>
                         <td>{{$usuario->usuario_id}}</td>
+                        <td>{{$usuario->username}}</td>
                         <td>{{$usuario->email}}</td>
                         <td>{{$usuario->role->nombre}}</td>
-                        @if ($usuario->curso_id !== 0)
-                        <td>{{$usuario->curso->nombre}}</td>
-                        @else
-                        <td>-</td>
-                        @endif
                         <td>
                               <a href="{{route('admin.usuarios.ver', ['id' => $usuario->usuario_id])}}"
                                     class="btn  btn-actions btn-primary"><i class="fa-solid fa-eye pe-2"></i>Ver</a>
