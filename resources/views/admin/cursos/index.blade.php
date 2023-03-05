@@ -12,6 +12,7 @@
             <h1 class="negrita">Panel de Administración</h1>
 
             <h2 class="d-inline-block me-3">Cursos</h2>
+
             <p class="d-inline-block btn-nuevo btn btn-success">
                   <a href="{{route('admin.cursos.nuevo.form')}}">Publicar nuevo curso</a>
             </p>

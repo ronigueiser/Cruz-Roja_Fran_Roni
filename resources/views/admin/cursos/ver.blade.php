@@ -20,7 +20,7 @@
             </div>
 
 
-            <a class="" aria-current="page" href="{{url('admin/cursos')}}">Volver </a>
+            <a class="btn-primary" aria-current="page" href="{{url('admin/cursos')}}">Volver </a>
         </section>
 
 @endsection

@@ -75,6 +75,8 @@ Route::prefix('admin/cursos')
     ->controller(\App\Http\Controllers\AdminCursosController::class)->group(function () {
         Route::get('/', 'index')->name('admin.cursos.listado');
 
+        Route::get('/dashboard', 'dashboard')->name('admin.cursos.dashboard');
+
         Route::get('/{id}', 'ver')->name('admin.cursos.ver')->whereNumber('id');
 
         Route::get('/{id}/eliminar', 'eliminarConfirmar')->name('admin.cursos.eliminar.confirmar')->whereNumber('id');

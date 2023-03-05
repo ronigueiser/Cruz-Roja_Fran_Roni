@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\AbstractPaginator;
 use App\Models\Curso;
 use App\Models\Clasificacion;
+use App\Models\Compra;
+use Illuminate\Support\Facades\DB;
+
 
 class AdminCursosController extends Controller
 {
@@ -26,6 +29,33 @@ class AdminCursosController extends Controller
             'buscarParams' => $buscarParams,
         ]);
     }
+
+    public function dashboard(){
+
+        $compras = Compra::with('precio')->sum('precio');
+        $cantidad = Compra::with('precio')->count('precio');
+
+        $curso_mas_comprado = DB::table('compras')
+            ->select('curso_id', DB::raw('count(*) as total'))
+            ->groupBy('curso_id')
+            ->orderByDesc('total')
+            ->limit(1)
+            ->first();
+
+
+//        print_r($curso_mas_comprado->curso_id);
+
+        $curso = Curso::findOrFail($curso_mas_comprado->curso_id);
+
+        return view('admin.cursos.dashboard', [
+            'compras' => $compras,
+            'cantidad' => $cantidad,
+            'ventas' => $curso_mas_comprado,
+            'curso' => $curso
+
+        ]);
+
+}
 
     public function ver($id)
     {
@@ -72,7 +102,7 @@ class AdminCursosController extends Controller
         $curso = Curso::findOrFail($id);
 
         $data = $request->except(['_token']);
-        
+
         $request->validate(Curso::VALIDATE_RULES, Curso::VALIDATE_MESSAGES);
 
         if($request->hasFile('portada')) {

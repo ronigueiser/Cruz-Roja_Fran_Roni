@@ -49,7 +49,7 @@
           </div>
           <div class="mb-2">
               <label for="hora" class="form-label">Horario de comienzo</label>
-              <input type="text" class="form-control" id="hora" name="hora" value="{{old('hora')}}" placeholder="** : ** (escribir de esta manera el horario)">
+              <input type="time" class="form-control" id="hora" name="hora" value="{{old('hora')}}">
               @error('hora')
               <div class="text-danger">{{ $errors->first('hora') }}</div>
 
