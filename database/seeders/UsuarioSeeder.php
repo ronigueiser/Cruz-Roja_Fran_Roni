@@ -22,7 +22,6 @@ class UsuarioSeeder extends Seeder
                 'password' => \Hash::make('1234'),
                 'username' => 'Roni',
                 'role_id' => 2,
-                'curso_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -32,7 +31,6 @@ class UsuarioSeeder extends Seeder
                 'password' => \Hash::make('1234'),
                 'username' => 'Francisco',
                 'role_id' => 1,
-                'curso_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],

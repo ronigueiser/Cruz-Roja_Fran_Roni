@@ -44,9 +44,11 @@ class AdminCursosController extends Controller
 
 
 //        print_r($curso_mas_comprado->curso_id);
-
-        $curso = Curso::findOrFail($curso_mas_comprado->curso_id);
-
+        if(!empty($curso_mas_comprado)) {
+        $curso = Curso::find($curso_mas_comprado->curso_id);
+        } else {
+            $curso = [];
+        }
         return view('admin.cursos.dashboard', [
             'compras' => $compras,
             'cantidad' => $cantidad,
@@ -54,7 +56,6 @@ class AdminCursosController extends Controller
             'curso' => $curso
 
         ]);
-
 }
 
     public function ver($id)
