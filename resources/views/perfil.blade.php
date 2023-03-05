@@ -12,7 +12,10 @@
 
     <h2>Historial de compras</h2>
 
-
+    @if (empty($manager->getItems()))
+        <p>Aún no te inscribiste a ningún curso. Podés hacerlo desde la pestaña <a href={{url('cursos')}}>Cursos</a></p>
+    @else
+        
     @foreach ($manager->getItems() as $operacion => $datosOperacion)
     <p>Operación: {{$operacion}}</p>
     <p>Fecha de Compra: {{$datosOperacion["fechaOperacion"]}}</p>
@@ -45,6 +48,7 @@
         </tfoot>
     </table>
     @endforeach
+    @endif
 </section>
 
 @endsection

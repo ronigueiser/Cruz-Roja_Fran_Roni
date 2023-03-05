@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('usuarios', function (Blueprint $table) {
             $table->string('username')
                   ->after('password')
-                  ->nullable;
+                  ->nullable();
         });
     }
 

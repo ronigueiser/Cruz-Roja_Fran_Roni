@@ -73,12 +73,18 @@ class Usuario extends User
         'password' => 'required',
     ];
 
+    public const VALIDATE_RULES_REGISTER = [
+        'email' => 'email:rcf,dns|unique:usuarios,email',
+        'password' => 'required',
+    ];
+
     public const VALIDATE_RULES_EDIT = [
         'email' => 'email:rcf,dns',
     ];
 
     public const VALIDATE_MESSAGES = [
         'email.email' => 'El email debe tener un formato como el siguiente: ejemplo@mail.com',
+        'email.unique' => 'Este email ya está registrado. Por favor, iniciá sesión.',
         'password.required' => 'La contraseña no puede quedar vacía.',
     ];
 

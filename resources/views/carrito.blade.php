@@ -5,7 +5,9 @@
 @section('main')
 <section class="container mb-4">
     <h1 class="negrita py-3">Mi Carrito</h1>
-    @if (!empty($usuarios_carritos))
+    @if ($usuarios_carritos->isEmpty())
+    <p>Aún no agregaste elementos a tu carrito.</p>
+    @else
     <ul class="carrito-lista d-flex flex-column">
         @foreach ($usuarios_carritos as $usuario_carrito)
         <li class="card cont-item-carrito d-flex flex-row mb-4">
@@ -34,10 +36,8 @@
         </li>
         @endforeach
     </ul>
-    @else
-    <p>Aún no agregaste elementos a tu carrito.</p>
+    <a href="{{url('/mp/confirmarCompra')}}" class="btn btn-primary btn-pagar-carrito">Ir a pagar</a>
     @endif
-    <a href="{{url('/mp/test')}}" class="btn btn-primary btn-pagar-carrito">Ir a pagar</a>
 </section>
 
 @endsection

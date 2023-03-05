@@ -17,7 +17,7 @@ class RegistrationController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate(Usuario::VALIDATE_RULES, Usuario::VALIDATE_MESSAGES);
+        $request->validate(Usuario::VALIDATE_RULES_REGISTER, Usuario::VALIDATE_MESSAGES);
 
         $user = Usuario::create(request(['email', 'password']));
 
@@ -25,5 +25,4 @@ class RegistrationController extends Controller
 
         return redirect()->to('/');
     }
-
 }

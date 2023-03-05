@@ -168,7 +168,7 @@ Route::post('cursos/confirmar-taller-completo', [\App\Http\Controllers\Confirmar
 
 /* Mercado Pago */
 
-Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'confirmarCompraForm'])->name('mp.confirmarCompraForm');
+Route::get('mp/confirmarCompra', [\App\Http\Controllers\MercadoPagoController::class, 'confirmarCompraForm'])->name('mp.confirmarCompraForm');
 Route::get('mp/test/v2', [\App\Http\Controllers\MercadoPagoController::class, 'confirmarCompraFormManager'])->name('mp.confirmarCompraFormManager');
 
 Route::get('mp/success', [\App\Http\Controllers\MercadoPagoController::class, 'successEjecutar'])->name('mp.success');
