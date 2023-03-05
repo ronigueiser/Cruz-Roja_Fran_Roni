@@ -45,6 +45,9 @@ class Curso extends Model
         'nombre' => 'required|min:2',
         'descripcion' => 'required|min:10',
         'precio' => 'required|numeric|min:0',
+        'lugar' => 'required',
+        'hora' => 'required',
+        'fecha' => 'required'
     ];
 
     public const VALIDATE_MESSAGES = [
@@ -55,6 +58,9 @@ class Curso extends Model
         'precio.required' => 'El precio no puede quedar vacío.',
         'precio.numeric' => 'El precio debe ser un número.',
         'precio.min' => 'El precio no puede ser negativo.',
+        'lugar.required' => 'Es necesario especificar una dirección',
+        'hora.required' => 'Es necesario especificar un horario de comienzo',
+        'fecha.required' => 'Es necesario especificar cuando comienza el curso',
     ];
 
     /*
