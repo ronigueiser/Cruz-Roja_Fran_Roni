@@ -15,7 +15,7 @@
       {{-- <p class="d-inline-block btn-nuevo btn btn-success">--}}
             {{-- <a href="{{route('admin.usuarios.nuevo.form')}}">Crear nuevo usuario</a>--}}
             {{-- </p>--}}
-      <section class="mb-3">
+      <div class="mb-3">
             <form action="{{route('admin.usuarios.listado')}}" method="get">
                   <label for="email" class="form-label negrita">Buscar usuario por email</label>
                   <div class="d-flex justify-content-between">
@@ -24,7 +24,7 @@
                         <button type="submit" class="btn btn-primary">Buscar</button>
                   </div>
             </form>
-      </section>
+      </div>
       <table class="table table-bordered table-striped">
             <thead>
                   <tr>

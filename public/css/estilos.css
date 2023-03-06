@@ -310,3 +310,9 @@ main {
 .btn-pagar-carrito {
     display: block;
 }
+
+.operacion-cont {
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 1rem;
+}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Curso;
 use App\Models\Carrito;
 use App\Models\Compra;
+use App\Models\Usuario;
 use App\Payments\MercadoPagoManager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class MercadoPagoController extends Controller
 {
     // public function confirmarCompraForm()
     // {
-        
+
 
     //     $preference = new Preference();
 
@@ -69,7 +70,7 @@ class MercadoPagoController extends Controller
     }
 
     public function successEjecutar(Request $request)
-    {   
+    {
         $usuarios_carrito = Carrito::with(['curso'])->get()->where('usuario_id', Auth::id());
         $id = Auth::id();
         $data = [];
@@ -89,6 +90,23 @@ class MercadoPagoController extends Controller
         return redirect()->route('carrito')
             ->with('status.message', 'Tu compra se realizó con éxito. Podés ver tu historial de compras en tu perfil.')
             ->with('status.type', 'success');
-        
+    }
+
+    public function failureEjecutar(Request $request)
+    {
+        $builder = Carrito::with(['curso']);
+        $usuarios_carritos = $builder->get()->where('usuario_id', Auth::id());
+        $cursos = Curso::all();
+        $usuarios = Usuario::all();
+
+        // return view('carrito', [
+        //     'usuarios_carritos' => $usuarios_carritos,
+        //     'cursos' => $cursos,
+        //     'usuarios' => $usuarios,
+        // ])->with('status.message', 'Tu compra se realizó con éxito. Podés ver tu historial de compras en tu perfil.')
+        //     ->with('status.type', 'danger');
+        return redirect()->route('mp.confirmarCompraForm')
+            ->with('status.message', 'Hubo un error al realizar la compra. Por favor, intentalo de nuevo.')
+            ->with('status.type', 'danger');
     }
 }

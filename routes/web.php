@@ -18,8 +18,7 @@ Route::get('blog', [\App\Http\Controllers\NovedadesController::class, 'index'])
     ->name('novedades');
 
 Route::get('cursos', [\App\Http\Controllers\CursosController::class, 'cursos'])
-    ->name('ver-cursos')
-    ->middleware('taller-completo');
+    ->name('ver-cursos');
 
 
 Route::get('contacto', [\App\Http\Controllers\ContactoController::class, 'index'])

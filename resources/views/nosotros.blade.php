@@ -3,7 +3,7 @@
 @section('title', 'Nosotros')
 
 @section('main')
-<main>
+
     <section class="container py-4">
         <h1 class="negrita mb-5">Nosotros</h1>
 
@@ -26,5 +26,5 @@
         </div>
 
     </section>
-</main>
+
 @endsection

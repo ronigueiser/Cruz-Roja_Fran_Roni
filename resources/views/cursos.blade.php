@@ -22,21 +22,21 @@
                 <p>Hora: {{$curso->hora}}</p>
             </div>
             <div class="card-footer">
+                @if (in_array($curso->curso_id, $carrito_ids))
+                <button type="submit" class="btn disabled agregar-item-carrito"><i
+                        class="fas fa-shopping-cart icono-carrito-btn"></i>Ya agregaste este curso</button>
+                @elseif (in_array($curso->curso_id, $compra_ids))
+                <button type="submit" class="btn disabled agregar-item-carrito"><i
+                        class="fas fa-shopping-cart icono-carrito-btn"></i>Inscripto</button>
+                @else
                 <form action="{{ route('carrito.agregar') }}" method="POST">
                     @csrf
-                    @if (in_array($curso->curso_id, $carrito_ids))
-                    <button type="submit" class="btn disabled agregar-item-carrito"><i
-                            class="fas fa-shopping-cart icono-carrito-btn"></i>Ya agregaste este curso</button>
-                    @elseif (in_array($curso->curso_id, $compra_ids))
-                    <button type="submit" class="btn disabled agregar-item-carrito"><i
-                            class="fas fa-shopping-cart icono-carrito-btn"></i>Inscripto</button>
-                    @else
 
-                    <input hidden type="number" name="curso_id" id="curso_id" value={{$curso->curso_id}} />
+                    <input hidden type="number" name="curso_id" value={{$curso->curso_id}}>
                     <button type="submit" class="btn btn-success agregar-item-carrito"><i
                             class="fas fa-shopping-cart icono-carrito-btn"></i>Agregar al carrito</button>
-                    @endif
                 </form>
+                @endif
             </div>
         </li>
         @endforeach

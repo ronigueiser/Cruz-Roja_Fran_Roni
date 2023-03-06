@@ -23,7 +23,7 @@
             </div>
 
             <div class="mb-2">
-                <label for="curso" class="form-label">Curso</label>
+                <label for="curso_id" class="form-label">Curso</label>
                 <select class="form-control" id="curso_id" name="curso_id">
 
                     @error('curso')
@@ -41,7 +41,7 @@
 
             <div class="mb-2">
                 <label for="detalle" class="form-label">Detalle</label>
-                <textarea class="form-control" id="detalle" name="detalle" value="{{old('detalle', $novedad->detalle)}}">{{old('detalle', $novedad->detalle)}}</textarea>
+                <textarea class="form-control" id="detalle" name="detalle">{{old('detalle', $novedad->detalle)}}</textarea>
 
                 @error('detalle')
                 <div class="text-danger">{{ $errors->first('detalle') }}</div>

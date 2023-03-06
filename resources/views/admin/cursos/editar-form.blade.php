@@ -25,8 +25,8 @@
             </div>
             <div class="mb-2">
                   <label for="descripcion" class="form-label">Descripción</label>
-                  <textarea class="form-control" id="descripcion" name="descripcion"
-                        value="{{old('descripcion', $curso->descripcion)}}">{{old('descripcion', $curso->descripcion)}} </textarea>
+                  <textarea class="form-control" id="descripcion"
+                        name="descripcion">{{old('descripcion', $curso->descripcion)}} </textarea>
                   @error('descripcion')
                   <div class="text-danger">{{ $errors->first('descripcion') }}</div>
 
@@ -40,36 +40,35 @@
                               value="{{old('precio', $curso->precio)}}" step="any">
                         @error('precio')
                         <div class="text-danger">{{ $errors->first('precio') }}</div>
+                        @enderror
                   </div>
+            </div>
+            <div class="mb-2">
+                  <label for="lugar" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" id="lugar" name="lugar"
+                        value="{{old('lugar', $curso->lugar)}}">
+                  @error('lugar')
+                  <div class="text-danger">{{ $errors->first('lugar') }}</div>
+
                   @enderror
             </div>
-          <div class="mb-2">
-              <label for="lugar" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="lugar" name="lugar"
-                     value="{{old('lugar', $curso->lugar)}}">
-              @error('lugar')
-              <div class="text-danger">{{ $errors->first('lugar') }}</div>
+            <div class="mb-2">
+                  <label for="hora" class="form-label">Comienzo del curso</label>
+                  <input type="time" class="form-control" id="hora" name="hora" value="{{old('hora', $curso->hora)}}">
+                  @error('hora')
+                  <div class="text-danger">{{ $errors->first('hora') }}</div>
 
-              @enderror
-          </div>
-          <div class="mb-2">
-              <label for="hora" class="form-label">Comienzo del curso</label>
-              <input type="time" class="form-control" id="hora" name="hora" "
-                     value="{{old('hora', $curso->hora)}}">
-              @error('hora')
-              <div class="text-danger">{{ $errors->first('hora') }}</div>
+                  @enderror
+            </div>
+            <div class="mb-2">
+                  <label for="fecha" class="form-label">Dia del curso</label>
+                  <input type="date" class="form-control" id="fecha" name="fecha" min="2023-01-01" max="2030-01-01"
+                        value="{{old('fecha', $curso->fecha)}}">
+                  @error('fecha')
+                  <div class="text-danger">{{ $errors->first('fecha') }}</div>
 
-              @enderror
-          </div>
-          <div class="mb-2">
-              <label for="fecha" class="form-label">Dia del curso</label>
-              <input type="date" class="form-control" id="fecha" name="fecha" min="2023-01-01" max="2030-01-01"
-                     value="{{old('fecha', $curso->fecha)}}">
-              @error('fecha')
-              <div class="text-danger">{{ $errors->first('fecha') }}</div>
-
-              @enderror
-          </div>
+                  @enderror
+            </div>
             <div class="mb-2">
                   <label for="clasificacion_id" class="form-label">Clasificacion</label>
                   <select class="form-control" id="clasificacion_id" name="clasificacion_id">

@@ -5,7 +5,7 @@
 ?>
 @extends('layouts.admin') {{-- Esto navega a [resources/views/layouts/main.blade.php] --}}
 
-@section('title', 'Administrador')
+@section('title', 'Administrar Cursos')
 
 @section('main')
       <section class="container py-4 cont-admin">
@@ -16,7 +16,7 @@
             <p class="d-inline-block btn-nuevo btn btn-success">
                   <a href="{{route('admin.cursos.nuevo.form')}}">Publicar nuevo curso</a>
             </p>
-            <section class="mb-3">
+            <div class="mb-3">
                   <form action="{{route('admin.cursos.listado')}}" method="get">
                         <label for="nombre" class="form-label negrita">Buscar por nombre del curso</label>
                         <div  class="d-flex justify-content-between">
@@ -24,7 +24,7 @@
                         <button type="submit" class="btn btn-primary">Buscar</button>
                         </div>
                   </form>
-            </section>
+            </div>
             <table class="table table-bordered table-striped">
                   <thead>
                         <tr>

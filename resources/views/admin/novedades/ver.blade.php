@@ -1,4 +1,4 @@
-@extends('layouts.main') {{-- Esto navega a [resources/views/layouts/main.blade.php] --}}
+@extends('layouts.admin') {{-- Esto navega a [resources/views/layouts/main.blade.php] --}}
 
 @section('title', 'Ver novedad')
 

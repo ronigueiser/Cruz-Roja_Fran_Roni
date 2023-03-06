@@ -14,7 +14,7 @@ Este archivo funciona como nuestro template de base
     <link rel="stylesheet" href="{{url('css/estilos.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
 </head>
 
@@ -53,7 +53,7 @@ Este archivo funciona como nuestro template de base
                                 </li>
                                 <li>
                                     <a class="dropdown-item" aria-current="page"
-                                       href="{{url('admin/cursos/dashboard')}}">Dashboard</a>
+                                        href="{{url('admin/cursos/dashboard')}}">Dashboard</a>
                                 </li>
                             </ul>
                         </li>
@@ -74,9 +74,9 @@ Este archivo funciona como nuestro template de base
             <div class="alert alert-{{Session::get('status.type') ?? 'info'}}">{!!Session::get('status.message')!!}
             </div>
             @endif
-            <section>
+            <div>
                 @yield('main')
-            </section>
+            </div>
         </main>
 
         <footer class="footer">
