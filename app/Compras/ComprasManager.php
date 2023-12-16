@@ -15,29 +15,26 @@ class ComprasManager
     private string $fechaOperacion = '1900-01-01 00:00:00';
 
 
-
     public function setItems(Collection $items)
     {
         foreach ($items as $operacion => $item) {
             $this->items = [];
             $this->totalPrice = 0;
             $this->fechaOperacion = '1900-01-01 00:00:00';
-            
+
                 foreach ($item as $item1) {
                     $newItem = new Compra();
                     $newItem->mp_payment_id = $item1->mp_payment_id;
                     $newItem->created_at = $item1->created_at;
-                    $newItem->nombre = $item1->curso->nombre;
-                    $newItem->lugar = $item1->curso->lugar;
-                    $newItem->fecha = $item1->curso->fecha;
-                    $newItem->hora = $item1->curso->hora;
+                    $newItem->nombre = $item1->nombre;
+                    $newItem->lugar = $item1->lugar;
+                    $newItem->fecha = $item1->fecha;
+                    $newItem->hora = $item1->hora;
                     $newItem->precio = $item1->precio;
                     $newItem->cantidad = $item1->cantidad;
                     $newItems[] = $item1;
-                
                 $this->totalPrice += $newItem->precio * $newItem->cantidad;
                 $this->fechaOperacion = $newItem->created_at;
-                
                 array_push($this->items, $newItem);
             }
             $this->itemsList['totalPrice'] = $this->totalPrice;
@@ -46,8 +43,6 @@ class ComprasManager
             $this->itemsAll[$operacion] = $this->itemsList;
             // array_push($this->itemsAll, $this->totalPrice);
             // array_push($this->itemsAll,  $this->items);
-            
-            
         }
     }
 
