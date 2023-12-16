@@ -81,7 +81,12 @@ class MercadoPagoController extends Controller
                 'carrito_id' => $item->carrito_id,
                 'curso_id' => $item->curso_id,
                 'usuario_id' => Auth::id(),
+                'nombre' => $item->curso->nombre,
+                'descripcion' => $item->curso->descripcion,
                 'precio' => $item->curso->precio,
+                'lugar' => $item->curso->lugar,
+                'fecha' => $item->curso->fecha,
+                'hora' => $item->curso->hora,
                 'cantidad' => 1,
             ];
             $compra = Compra::create($data);

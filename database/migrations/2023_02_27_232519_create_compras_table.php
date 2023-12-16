@@ -19,9 +19,14 @@ return new class extends Migration
             $table->string('carrito_id', 15);
             $table->tinyInteger('curso_id');
             $table->tinyInteger('usuario_id');
+            $table->string('nombre');
+            $table->text('descripcion');
             $table->integer('precio');
+            $table->string('lugar');
+            $table->date('fecha');
+            $table->time('hora');
             $table->smallInteger('cantidad');
-            
+
             $table->timestamps();
         });
     }
