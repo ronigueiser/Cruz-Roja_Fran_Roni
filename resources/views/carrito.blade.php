@@ -6,7 +6,7 @@
 <section class="container mb-4">
     <h1 class="negrita py-3">Mi Carrito</h1>
     @if ($usuarios_carritos->isEmpty())
-    <p>Aún no agregaste elementos a tu carrito.</p>
+    <p>Aún no agregaste elementos a tu carrito. Podés hacerlo desde la pestaña <a href={{url('cursos')}}>Cursos</a></p>
     @else
     <ul class="carrito-lista d-flex flex-column">
         @foreach ($usuarios_carritos as $usuario_carrito)
