@@ -19,7 +19,12 @@ class UsuariosController extends Controller
         $builder = Carrito::with(['curso']);
         $usuarios_carritos = $builder->get()->where('usuario_id', Auth::id());
         $builder = Compra::with(['curso']);
-        $usuarios_compras = $builder->orderBy('created_at', 'DESC')->get()->where('usuario_id', Auth::id())->groupBy('mp_payment_id');
+//        $usuarios_compras = $builder->orderBy('created_at', 'DESC')->get()->where('usuario_id', Auth::id())->groupBy('mp_payment_id');
+
+        $usuarios_compras = Compra::where('usuario_id', Auth::id())
+            ->orderBy('created_at', 'DESC')
+            ->get()
+            ->groupBy('mp_payment_id');
         $total_compras = $usuarios_compras->sum('precio');
         $usuario = Usuario::findOrFail(Auth::id());
 
@@ -49,7 +54,7 @@ class UsuariosController extends Controller
         $usuario = Usuario::findOrFail($id);
 
         $data = $request->except(['_token']);
-        
+
         $request->validate(Usuario::VALIDATE_RULES_EDIT, Usuario::VALIDATE_MESSAGES);
 
 

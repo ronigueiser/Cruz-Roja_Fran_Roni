@@ -9,7 +9,7 @@ class Compra extends Model
 {
     protected $table = "compras";
     protected $primaryKey = "compra_id";
-    protected $fillable = ['mp_payment_id', 'carrito_id', 'curso_id', 'usuario_id', 'precio', 'cantidad'];
+    protected $fillable = ['mp_payment_id', 'carrito_id', 'curso_id', 'usuario_id', 'nombre','descripcion','precio','lugar','fecha','hora', 'cantidad'];
 
     public function curso()
     {
