@@ -18,7 +18,7 @@ class UsuariosController extends Controller
     {
         $builder = Carrito::with(['curso']);
         $usuarios_carritos = $builder->get()->where('usuario_id', Auth::id());
-        $builder = Compra::with(['curso']);
+//        $builder = Compra::with(['curso']);
 //        $usuarios_compras = $builder->orderBy('created_at', 'DESC')->get()->where('usuario_id', Auth::id())->groupBy('mp_payment_id');
 
         $usuarios_compras = Compra::where('usuario_id', Auth::id())
